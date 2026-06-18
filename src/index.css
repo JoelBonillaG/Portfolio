@@ -1,0 +1,123 @@
+@import 'tailwindcss';
+
+/* Dark mode is driven by a `.dark` class on <html> (managed by ThemeProvider). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ───────────────────────────────────────────────────────────
+   Brand palette → semantic CSS variables (light is the default,
+   .dark overrides). Components reference the semantic tokens,
+   never raw hex, so re-theming happens in one place.
+   ─────────────────────────────────────────────────────────── */
+:root {
+  --bg: #faf4e9; /* warm paper            */
+  --bg-soft: #f3ead9; /* subtle section band   */
+  --surface: #ffffff; /* cards                 */
+  --elevated: #f6eedd; /* elevated surfaces     */
+  --border: rgba(44, 44, 42, 0.12);
+  --fg: #2c2c2a; /* primary text          */
+  --muted: #6f6a5e; /* secondary text        */
+  --accent: #a9650f; /* amber (links/CTAs)    */
+  --accent-strong: #8a5410;
+  --accent-soft: #8a5410; /* readable amber on light */
+  --on-accent: #fdf6ea;
+  --ring: rgba(169, 101, 15, 0.45);
+}
+
+.dark {
+  --bg: #2c2c2a; /* carbón oscuro         */
+  --bg-soft: #313130;
+  --surface: #34332f;
+  --elevated: #444441; /* gris medio (paleta)   */
+  --border: rgba(250, 238, 218, 0.12);
+  --fg: #faeeda; /* blanco cálido         */
+  --muted: #b3a98f;
+  --accent: #ba7517; /* ámbar fuerte (paleta) */
+  --accent-strong: #d4882a;
+  --accent-soft: #fac775; /* ámbar claro (paleta)  */
+  --on-accent: #2c2c2a;
+  --ring: rgba(250, 199, 117, 0.5);
+}
+
+/* Expose tokens to Tailwind utilities: bg-bg, text-fg, border-border, ... */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-soft: var(--bg-soft);
+  --color-surface: var(--surface);
+  --color-elevated: var(--elevated);
+  --color-border: var(--border);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-soft: var(--accent-soft);
+  --color-on-accent: var(--on-accent);
+
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    color-scheme: light dark;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-on-accent);
+  }
+
+  /* Honor reduced-motion preferences globally. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-elevated);
+  border-radius: 9999px;
+  border: 2px solid var(--color-bg);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
