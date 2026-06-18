@@ -36,7 +36,7 @@ export const projects = [
         title: 'Reconocimiento de Placas y Monitoreo Vehicular',
         tagline: 'Visión por computador para detectar, leer y sancionar placas vehiculares en tiempo real.',
         overview:
-          'Sistema de visión por computador de extremo a extremo que detecta vehículos, lee su placa, estima la velocidad y genera una sanción graduada y explicable. El pipeline encadena detección (YOLOv11), segmentación de caracteres (U-Net), clasificación óptica (CNN) y un motor difuso de sanciones, evaluado sobre vehículos reales en vía.',
+          'Sistema de visión por computador de extremo a extremo para el control vehicular en accesos y vías internas. Toma el video de una cámara, detecta cada vehículo con YOLOv11, recorta la placa y la lee carácter por carácter combinando una U-Net que segmenta los caracteres y una CNN que los clasifica, con un post-procesamiento que descarta falsos positivos como tornillos o regiones espurias. A partir de la velocidad estimada y la reincidencia, un motor difuso Mamdani propone una sanción graduada e interpretable —no una caja negra—. Todo el flujo se integra en una aplicación web de monitoreo en tiempo real y se evaluó sobre vehículos reales en vía.',
         role: 'Entrené los modelos de visión (U-Net y CNN), diseñé el sistema difuso de sanciones y construí la interfaz del operador.',
         features: [
           'Entrené los modelos de segmentación (U-Net) y clasificación óptica (CNN) para el reconocimiento de caracteres, alcanzando 91.42% de precisión por carácter y 94.59% de lectura completa de placa en 74 vehículos reales.',
@@ -48,7 +48,7 @@ export const projects = [
         title: 'License Plate Recognition & Vehicle Monitoring',
         tagline: 'Computer vision to detect, read and penalize vehicle plates in real time.',
         overview:
-          'An end-to-end computer-vision system that detects vehicles, reads their license plate, estimates speed and produces a graded, explainable sanction. The pipeline chains detection (YOLOv11), character segmentation (U-Net), optical classification (CNN) and a fuzzy sanction engine, evaluated on real vehicles on the road.',
+          'An end-to-end computer-vision system for vehicle control at entrances and internal roads. It takes a camera feed, detects each vehicle with YOLOv11, crops the plate and reads it character by character by combining a U-Net that segments the characters and a CNN that classifies them, with post-processing that discards false positives such as screws or spurious regions. From the estimated speed and recurrence, a Mamdani fuzzy engine proposes a graded, interpretable sanction — not a black box. The whole flow is wrapped in a real-time web monitoring application and was evaluated on real vehicles on the road.',
         role: 'I trained the vision models (U-Net and CNN), designed the fuzzy sanction system and built the operator interface.',
         features: [
           'Trained the segmentation (U-Net) and optical classification (CNN) models for character recognition, reaching 91.42% per-character accuracy and 94.59% full-plate reading on 74 real vehicles.',
@@ -77,7 +77,7 @@ export const projects = [
         title: 'Evaluación de Riesgo Materno (Difuso-Genético)',
         tagline: 'Sistema difuso optimizado con algoritmos genéticos para clasificar el riesgo materno de forma explicable.',
         overview:
-          'Sistema de apoyo a la decisión clínica que lee seis signos vitales rutinarios y clasifica el embarazo en riesgo bajo, medio o alto. Usa un motor difuso Mamdani cuya base de reglas se aprende automáticamente con un algoritmo genético, de modo que cada predicción puede auditarse regla por regla en lugar de ser una caja negra.',
+          'Sistema de apoyo a la decisión clínica que estima si un embarazo es de riesgo bajo, medio o alto a partir de seis signos vitales rutinarios. Cada variable se modela con curvas de pertenencia difusas y un motor de inferencia Mamdani fusiona las reglas activas para producir un resultado que puede leerse y auditarse regla por regla, en lugar de un número sin explicación. La parte central es que las reglas no se escriben a mano: un algoritmo genético (enfoque Michigan) las aprende automáticamente, y se comparan de forma honesta contra RIPPER y PRISM evaluados dentro del mismo motor. El backend está en Python con FastAPI y el frontend en React, pensado para que el personal de salud entienda el porqué de cada predicción.',
         role: 'Implementé el motor de inferencia difusa, el algoritmo genético que aprende las reglas y la interfaz clínica.',
         features: [
           'Implementé el motor de inferencia difusa Mamdani para clasificar el riesgo materno en tres niveles, con variables clínicas configurables y un resultado explicable por las reglas activas.',
@@ -89,7 +89,7 @@ export const projects = [
         title: 'Maternal Risk Assessment (Fuzzy-Genetic)',
         tagline: 'A fuzzy system optimized with genetic algorithms to classify maternal risk explainably.',
         overview:
-          'A clinical decision-support system that reads six routine vital signs and classifies a pregnancy as low, mid or high risk. It uses a Mamdani fuzzy engine whose rule base is learned automatically with a genetic algorithm, so every prediction can be audited rule by rule instead of being a black box.',
+          'A clinical decision-support system that estimates whether a pregnancy is at low, mid or high risk from six routine vital signs. Each variable is modelled with fuzzy membership curves and a Mamdani inference engine combines the active rules into a result that can be read and audited rule by rule, instead of an unexplained number. The key part is that the rules are not written by hand: a genetic algorithm (Michigan approach) learns them automatically, and they are compared honestly against RIPPER and PRISM evaluated inside the same engine. The backend is Python with FastAPI and the frontend is React, designed so health staff understand the reason behind each prediction.',
         role: 'I implemented the fuzzy inference engine, the genetic algorithm that learns the rules and the clinical interface.',
         features: [
           'Implemented the Mamdani fuzzy inference engine to classify maternal risk into three levels, with configurable clinical variables and an output explainable by the active rules.',
@@ -115,7 +115,7 @@ export const projects = [
         title: 'Gestión de Clínica Veterinaria (PetSafe)',
         tagline: 'Plataforma veterinaria web y móvil con notificaciones push y cola de atención.',
         overview:
-          'Plataforma integral para gestionar una clínica veterinaria de extremo a extremo: dueños y mascotas, citas, cola de atención en tiempo real, consultas médicas, vacunas y adopciones. Backend NestJS y frontend Angular, con una aplicación móvil en Flutter para los dueños.',
+          'Plataforma integral para operar una clínica veterinaria de principio a fin: dueños y mascotas, solicitudes y agenda de citas, cola de atención en vivo, consultas médicas con adjuntos y seguimientos, vacunas, código QR por mascota y hasta un flujo de adopciones. Centraliza todo detrás de una API REST en NestJS organizada en capas limpias sobre PostgreSQL, con WebSockets para la cola y las notificaciones en tiempo real, y una interfaz Angular para el personal. Los dueños cuentan además con una aplicación móvil en Flutter. Todo el stack se conteneriza con Docker y se despliega mediante CI/CD a un VPS.',
         role: 'Desarrollé la aplicación móvil, el módulo de notificaciones full-stack y los módulos de código QR y cola de atención.',
         features: [
           'Desarrollé la aplicación móvil en Flutter: autenticación, perfil e historial de mascotas, notificaciones push con Firebase Cloud Messaging y una suite de pruebas E2E con Maestro (9 flujos automatizados).',
@@ -127,7 +127,7 @@ export const projects = [
         title: 'Veterinary Clinic Management (PetSafe)',
         tagline: 'A web + mobile veterinary platform with push notifications and an attention queue.',
         overview:
-          'An end-to-end platform to run a veterinary clinic: owners and pets, appointments, a real-time attention queue, medical encounters, vaccinations and adoptions. A NestJS backend with an Angular frontend, plus a Flutter mobile app for owners.',
+          'An all-in-one platform to run a veterinary clinic from end to end: owners and pets, appointment requests and scheduling, a live attention queue, medical encounters with attachments and follow-ups, vaccinations, a per-pet QR code and even an adoption flow. Everything is centralized behind a NestJS REST API organized in clean layers over PostgreSQL, with WebSockets for the real-time queue and notifications, and an Angular interface for the staff. Owners also get a Flutter mobile app. The whole stack is containerized with Docker and shipped through CI/CD to a VPS.',
         role: 'I built the mobile app, the full-stack notifications module and the QR & attention-queue modules.',
         features: [
           'Developed the Flutter mobile app: authentication, pet profile and history, push notifications with Firebase Cloud Messaging and an E2E test suite with Maestro (9 automated flows).',
@@ -153,7 +153,7 @@ export const projects = [
         title: 'Sistema de Gestión Hospitalaria',
         tagline: 'Arquitectura de microservicios para la gestión de pacientes y consultas médicas.',
         overview:
-          'Plataforma hospitalaria construida como microservicios Spring Boot, donde autenticación, administración, consultas y reportería corren detrás de un único API Gateway con descubrimiento de servicios (Eureka) y PostgreSQL distribuido para escalar por centro médico.',
+          'Plataforma de gestión hospitalaria construida como un sistema de microservicios con Spring Cloud. Un único API Gateway enruta y asegura cada petición, mientras un registro Eureka permite que los servicios de autenticación, administración, consultas y reportería se descubran entre sí. Los datos viven en PostgreSQL y, para escalar, pueden distribuirse con Citus particionando por centro médico, con las APIs documentadas en OpenAPI/Swagger y un frontend en React. Es un proyecto pensado para mostrar resiliencia, escalabilidad y separación de responsabilidades en un dominio real.',
         role: 'Construí el microservicio de consultas desde cero y el módulo de pacientes en el frontend.',
         features: [
           'Desarrollé el microservicio de consultas desde cero en una arquitectura Spring Cloud: gestión de pacientes y consultas médicas con paginación, control de acceso por rol y documentación OpenAPI.',
@@ -165,7 +165,7 @@ export const projects = [
         title: 'Hospital Management System',
         tagline: 'A microservices architecture for managing patients and medical consultations.',
         overview:
-          'A hospital platform built as Spring Boot microservices, where authentication, administration, consultations and reporting run behind a single API Gateway with service discovery (Eureka) and distributed PostgreSQL to scale per medical center.',
+          'A hospital management platform built as a Spring Cloud microservices system. A single API Gateway routes and secures every request, while a Eureka registry lets the authentication, administration, consultation and reporting services discover one another. Data lives in PostgreSQL and, to scale, can be distributed with Citus sharded per medical center, with APIs documented in OpenAPI/Swagger and a React frontend. The project is designed to show resilience, scalability and separation of concerns in a real domain.',
         role: 'I built the consultation microservice from scratch and the patients module on the frontend.',
         features: [
           'Built the consultation microservice from scratch in a Spring Cloud architecture: patient and consultation management with pagination, role-based access control and OpenAPI documentation.',
@@ -189,7 +189,7 @@ export const projects = [
         title: 'Sistema Distribuido de Gestión de Combustible',
         tagline: 'Microservicios comunicados por gRPC para gestionar flotas, rutas y consumo de combustible.',
         overview:
-          'Plataforma distribuida de gestión de flota y combustible construida como microservicios NestJS que se comunican por gRPC: vehículos, conductores y rutas, con cálculo del consumo real de combustible por viaje trazado sobre el mapa de la ruta.',
+          'Plataforma distribuida para gestionar una flota y su consumo de combustible, construida como microservicios independientes —conductores, vehículos, usuarios, rutas, combustible, correo y logging— que se comunican por gRPC detrás de un API Gateway y se registran en Eureka. Por cada viaje calcula el consumo real frente al estimado y un puntaje de eficiencia, trazado sobre el mapa de la ruta para detectar sobreconsumos. Usa RabbitMQ para eventos asíncronos, PostgreSQL para los datos y un frontend React con vistas de mapa, con toda la infraestructura contenerizada con Docker.',
         role: 'Desarrollé los microservicios de usuarios y rutas/viajes, y sus módulos en el frontend.',
         features: [
           'Desarrollé los microservicios de usuarios y rutas/viajes con comunicación gRPC: gestión de usuarios, CRUD de rutas y ciclo de vida completo de viajes (asignación de conductor, seguimiento de ubicación, validación por tipo de licencia y cálculo de consumo de combustible estimado y real).',
@@ -200,7 +200,7 @@ export const projects = [
         title: 'Distributed Fuel Management System',
         tagline: 'gRPC-connected microservices to manage fleets, routes and fuel consumption.',
         overview:
-          'A distributed fleet and fuel-management platform built as NestJS microservices communicating over gRPC: vehicles, drivers and routes, with real per-trip fuel consumption plotted over the route map.',
+          'A distributed platform to manage a fleet and its fuel usage, built as independent microservices — drivers, vehicles, users, routes, fuel, email and logging — that communicate over gRPC behind an API Gateway and register with Eureka. For each trip it computes actual versus estimated fuel use and an efficiency score, plotted over the route map to surface overconsumption. It uses RabbitMQ for asynchronous events, PostgreSQL for data and a React frontend with map views, with all infrastructure containerized with Docker.',
         role: 'I developed the users and routes/trips microservices, plus their frontend modules.',
         features: [
           'Developed the users and routes/trips microservices over gRPC: user management, route CRUD and a full trip lifecycle (driver assignment, location tracking, license-type validation and estimated-vs-actual fuel calculation).',
@@ -226,7 +226,7 @@ export const projects = [
         title: 'Gestión y Moderación de Publicaciones (Marketplace Link)',
         tagline: 'Marketplace con publicaciones geolocalizadas y moderación automática de contenido.',
         overview:
-          'Marketplace full-stack donde los usuarios publican productos, descubren lo que se vende cerca mediante geolocalización y un equipo de moderación mantiene el catálogo confiable. Backend Spring Boot y frontend React, desplegado en la nube.',
+          'Marketplace full-stack donde los usuarios publican productos, descubren lo que se vende cerca mediante consultas geoespaciales y un equipo de moderación mantiene el catálogo confiable. El backend en Spring Boot expone una API REST documentada con OpenAPI, con seguridad JWT y control de acceso por rol, paginación y moderación de contenido; el frontend está en React con TypeScript. La calidad está integrada en el pipeline —cobertura de pruebas, E2E y análisis estático— y la plataforma se despliega en la nube con almacenamiento de imágenes gestionado.',
         role: 'Desarrollé el módulo de publicaciones full-stack y sus pruebas E2E.',
         features: [
           'Desarrollé el módulo de publicaciones full-stack: CRUD completo, carga y gestión de imágenes, filtros por distancia, precio y categoría, moderación automática de contenido peligroso y suspensión automática programada.',
@@ -237,7 +237,7 @@ export const projects = [
         title: 'Publication Management & Moderation (Marketplace Link)',
         tagline: 'A marketplace with geolocated listings and automatic content moderation.',
         overview:
-          'A full-stack marketplace where users publish products, discover what is for sale nearby via geolocation and a moderation team keeps the catalog trustworthy. A Spring Boot backend with a React frontend, deployed to the cloud.',
+          'A full-stack marketplace where users publish products, discover what is for sale nearby via geospatial queries and a moderation team keeps the catalog trustworthy. The Spring Boot backend exposes a REST API documented with OpenAPI, with JWT security and role-based access control, pagination and content moderation; the frontend is React with TypeScript. Quality is built into the pipeline — test coverage, E2E and static analysis — and the platform is deployed to the cloud with managed image storage.',
         role: 'I developed the full-stack publications module and its E2E tests.',
         features: [
           'Developed the full-stack publications module: full CRUD, image upload and management, filters by distance, price and category, automatic moderation of unsafe content and a scheduled auto-suspension task.',
@@ -260,7 +260,7 @@ export const projects = [
         title: 'Sistema de Gestión Clínica (ClinicCare)',
         tagline: 'Plataforma clínica para la gestión de citas y usuarios con autenticación segura.',
         overview:
-          'Sistema de gestión clínica full-stack para coordinar citas, historiales y usuarios, con backend Spring Boot bajo arquitectura limpia, seguridad por roles y una experiencia pensada tanto para el personal médico como para los pacientes.',
+          'Sistema de gestión clínica full-stack para coordinar la operación de un consultorio: agenda de citas, historiales médicos, usuarios y roles. El backend en Spring Boot sigue arquitectura limpia con seguridad por roles mediante JWT y recuperación de contraseña por correo; el frontend en React ofrece vistas diferenciadas para administradores y médicos, con calendario interactivo y exportación de reportes a PDF. El foco estuvo en la integridad de los datos, la seguridad y una experiencia clara tanto para el personal como para los pacientes.',
         role: 'Desarrollé el módulo de autenticación (full-stack) y el de citas (frontend).',
         features: [
           'Desarrollé el módulo de autenticación full-stack: login con JWT, rutas protegidas por rol y recuperación de contraseña por email con tokens de un solo uso y flujo OTP para el cliente móvil.',
@@ -271,7 +271,7 @@ export const projects = [
         title: 'Clinic Management System (ClinicCare)',
         tagline: 'A clinical platform for appointment and user management with secure authentication.',
         overview:
-          'A full-stack clinic management system to coordinate appointments, records and users, with a Spring Boot backend under clean architecture, role-based security and an experience designed for both medical staff and patients.',
+          'A full-stack clinic management system to coordinate a practice’s operation: appointment scheduling, medical records, users and roles. The Spring Boot backend follows clean architecture with role-based security via JWT and email password recovery; the React frontend offers role-specific views for admins and doctors, with an interactive calendar and PDF report export. The focus was on data integrity, security and a clear experience for both staff and patients.',
         role: 'I built the authentication module (full-stack) and the appointments module (frontend).',
         features: [
           'Developed the full-stack authentication module: JWT login, role-protected routes and email password recovery with single-use tokens and an OTP flow for the mobile client.',
@@ -296,7 +296,7 @@ export const projects = [
         title: 'Iron Zone — Gestión de Gimnasio',
         tagline: 'Módulo a medida sobre Odoo 18 para gestión de contenido y membresías de un gimnasio.',
         overview:
-          'Plataforma de gestión integral para un gimnasio construida como solución a medida sobre Odoo 18: reúne el sitio web público, la tienda en línea, las membresías, las clases y la facturación electrónica en un solo sistema modular.',
+          'Plataforma de gestión integral para un gimnasio y centro deportivo, construida como una solución a medida sobre Odoo 18. En lugar de herramientas desconectadas, reúne en un solo sistema el sitio web público, la tienda en línea, las membresías y suscripciones con facturación recurrente, el catálogo de guías de ejercicio, el inventario, las clases y eventos, y la facturación electrónica con sus retenciones e impuestos. Las apps nativas de Odoo se extienden con módulos personalizados, y clientes, entrenadores, ventas y facturas se administran desde vistas con permisos por rol. Se empaqueta con Docker Compose sobre PostgreSQL.',
         role: 'Desarrollé el módulo personalizado de guías de ejercicio y la infraestructura del proyecto.',
         features: [
           'Desarrollé el módulo personalizado de guías de ejercicio: catálogo con control de acceso por rol (entrenador/administrador), integración con el sistema de membresías para restringir contenido premium por plan y portal web para socios.',
@@ -307,7 +307,7 @@ export const projects = [
         title: 'Iron Zone — Gym Management',
         tagline: 'A custom Odoo 18 module for managing a gym’s content and memberships.',
         overview:
-          'An all-in-one management platform for a gym built as a custom Odoo 18 solution: it brings the public website, online store, memberships, classes and electronic invoicing into a single modular system.',
+          'An all-in-one management platform for a gym and sports center, built as a custom Odoo 18 solution. Instead of disconnected tools, it brings into a single system the public website, the online store, memberships and subscriptions with recurring billing, the exercise-guide catalog, inventory, classes and events, and electronic invoicing with its withholdings and taxes. Odoo’s native apps are extended with custom modules, and customers, trainers, sales and invoices are managed from role-permissioned views. It is packaged with Docker Compose over PostgreSQL.',
         role: 'I developed the custom exercise-guide module and the project infrastructure.',
         features: [
           'Developed the custom exercise-guide module: catalog with role-based access (trainer/admin), integration with the membership system to gate premium content per plan, and a member web portal.',
@@ -330,7 +330,7 @@ export const projects = [
         title: 'Monitoreo Móvil de Facturación Electrónica',
         tagline: 'App móvil real, en producción, que alerta sobre el estado de comprobantes electrónicos ante el SRI.',
         overview:
-          'Aplicación móvil que extiende un sistema contable de escritorio (Microplus SQL) con alertas en tiempo real: monitorea el estado de autorización de los comprobantes electrónicos ante el SRI y notifica al instante cuando una factura es autorizada o rechazada. Desplegada en producción para una empresa.',
+          'Aplicación móvil que resuelve una limitación real de Microplus SQL, un sistema contable de escritorio muy usado en Ecuador: al ser de escritorio, no avisa fuera del programa cuando el SRI autoriza o rechaza un comprobante electrónico, y el personal debía revisarlo manualmente. La app consume la API de Microplus, monitorea el estado de los comprobantes y envía notificaciones push en tiempo real cuando una factura cambia de estado. Incluye configuración del servidor, autenticación JWT con refresco automático de token, monitoreo de conectividad y un dashboard de comprobantes filtrable por tipo y fecha. Está desplegada en producción para una empresa (cliente confidencial).',
         role: 'Proyecto individual de principio a fin para una empresa (cliente confidencial).',
         features: [
           'Desarrollé de forma individual una aplicación móvil en Flutter para una empresa, que resuelve la ausencia de alertas en tiempo real de un sistema contable de escritorio: consulta el estado de autorización de comprobantes electrónicos ante el SRI y notifica al instante cuando una factura es autorizada o rechazada.',
@@ -341,7 +341,7 @@ export const projects = [
         title: 'Mobile E-Invoicing Monitoring',
         tagline: 'A real, production mobile app that alerts on the authorization status of e-invoices with the tax authority.',
         overview:
-          'A mobile app that extends a desktop accounting system (Microplus SQL) with real-time alerts: it monitors the authorization status of electronic invoices with the tax authority (SRI) and notifies instantly when one is approved or rejected. Deployed in production for a company.',
+          'A mobile app that solves a real limitation of Microplus SQL, a desktop accounting system widely used in Ecuador: being desktop-based, it gives no alert outside the program when the tax authority (SRI) approves or rejects an electronic invoice, so staff had to check it manually. The app consumes the Microplus API, monitors the status of invoices and sends real-time push notifications when one changes state. It includes server configuration, JWT authentication with automatic token refresh, connectivity monitoring and an invoice dashboard filterable by type and date. It is deployed in production for a company (confidential client).',
         role: 'Solo project, end to end, for a company (confidential client).',
         features: [
           'Single-handedly built a Flutter mobile app for a company that fills a desktop accounting system’s lack of real-time alerts: it checks the authorization status of electronic invoices with the tax authority (SRI) and notifies instantly when one is approved or rejected.',
@@ -364,7 +364,7 @@ export const projects = [
         title: 'Simulador de Metas de Ahorro',
         tagline: 'Aplicación de metas de ahorro con autenticación, notificaciones y reportes.',
         overview:
-          'Aplicación full-stack para planificar metas de ahorro, registrar aportes y seguir el progreso, con notificaciones y reportes. Construida de extremo a extremo en un sprint de competencia.',
+          'Aplicación full-stack para planificar metas de ahorro: el usuario crea metas, registra aportes y sigue su progreso con un panel, recordatorios y reportes. El backend en Laravel expone la lógica de negocio con autenticación JWT y el frontend en React arma la experiencia. Se diseñó y entregó de extremo a extremo en un único sprint de competencia.',
         role: 'Desarrollé la autenticación en el backend y el sistema de notificaciones y reportes.',
         features: [
           'Implementé el módulo de autenticación en el backend con JWT: registro, login, gestión de perfil y cierre de sesión.',
@@ -375,7 +375,7 @@ export const projects = [
         title: 'Savings Goals Simulator',
         tagline: 'A savings-goals app with authentication, notifications and reports.',
         overview:
-          'A full-stack app to plan savings goals, log contributions and track progress, with notifications and reports. Built end to end in a competition sprint.',
+          'A full-stack app to plan savings goals: users create goals, log contributions and track progress through a dashboard, reminders and reports. The Laravel backend exposes the business logic with JWT authentication and the React frontend builds the experience. It was designed and shipped end to end in a single competition sprint.',
         role: 'I built the backend authentication and the notifications & reporting system.',
         features: [
           'Implemented the backend authentication module with JWT: registration, login, profile management and logout.',
@@ -398,7 +398,7 @@ export const projects = [
         title: 'Gestión de Mantenimiento de Equipos',
         tagline: 'Plataforma para gestionar activos, proveedores y el mantenimiento de equipos.',
         overview:
-          'Plataforma full-stack para gestionar activos físicos y su mantenimiento —responsables, proveedores, ubicaciones e ingresos— construida en equipo bajo metodología Scrum.',
+          'Plataforma full-stack para que una organización gestione sus activos físicos y el mantenimiento de equipos: activos, categorías, ubicaciones, proveedores, responsables e ingresos, con reportes. El backend está en Laravel y el frontend en React, con autenticación JWT y control de acceso por rol. Se construyó en equipo trabajando bajo metodología Scrum.',
         role: 'Desarrollé los módulos de inventario y la autenticación con control de acceso.',
         features: [
           'Desarrollé los módulos de activos, categorías, ubicaciones, proveedores e ingresos en el backend: CRUD completo con validaciones, relaciones entre modelos y datos iniciales.',
@@ -409,7 +409,7 @@ export const projects = [
         title: 'Equipment Maintenance Management',
         tagline: 'A platform to manage assets, suppliers and equipment maintenance.',
         overview:
-          'A full-stack platform to manage physical assets and their maintenance — owners, suppliers, locations and income — built as a team under Scrum.',
+          'A full-stack platform for an organization to manage its physical assets and equipment maintenance: assets, categories, locations, suppliers, owners and income, with reports. The backend is Laravel and the frontend React, with JWT authentication and role-based access control. It was built as a team working under Scrum.',
         role: 'I developed the inventory modules and authentication with access control.',
         features: [
           'Developed the assets, categories, locations, suppliers and income modules on the backend: full CRUD with validations, model relationships and initial data.',
@@ -432,7 +432,7 @@ export const projects = [
         title: 'Data Warehouse con Metodología Hefesto',
         tagline: 'Solución de inteligencia de negocios end to end: del modelo dimensional al dashboard.',
         overview:
-          'Solución de inteligencia de negocios de extremo a extremo sobre AdventureWorks 2022: del modelo dimensional al pipeline ETL, el cubo OLAP y el dashboard, siguiendo la metodología Hefesto.',
+          'Solución de inteligencia de negocios de extremo a extremo sobre la base AdventureWorks 2022, aplicando la metodología Hefesto, que parte de las preguntas de negocio para llegar al modelo dimensional. Incluye el diseño del esquema estrella, el pipeline ETL en SSIS que puebla el Data Warehouse, un cubo OLAP multidimensional en SSAS y un dashboard analítico en Excel conectado al cubo. Permite analizar las ventas por vendedor, producto, territorio, moneda y período.',
         role: 'Diseño del modelo dimensional, ETL, cubo OLAP y dashboard.',
         features: [
           'Diseñé e implementé un Data Warehouse sobre AdventureWorks 2022 aplicando la metodología Hefesto: modelo estrella con tablas de hechos de ventas y dimensiones de productos, vendedores, fechas, territorios y monedas.',
@@ -443,7 +443,7 @@ export const projects = [
         title: 'Data Warehouse with Hefesto Methodology',
         tagline: 'An end-to-end business-intelligence solution: from the dimensional model to the dashboard.',
         overview:
-          'An end-to-end business-intelligence solution over AdventureWorks 2022: from the dimensional model to the ETL pipeline, the OLAP cube and the dashboard, following the Hefesto methodology.',
+          'An end-to-end business-intelligence solution over the AdventureWorks 2022 database, applying the Hefesto methodology, which starts from the business questions to reach the dimensional model. It covers the star-schema design, the SSIS ETL pipeline that populates the Data Warehouse, a multidimensional OLAP cube in SSAS and an analytical Excel dashboard connected to the cube. It enables sales analysis by salesperson, product, territory, currency and period.',
         role: 'Dimensional modeling, ETL, OLAP cube and dashboard.',
         features: [
           'Designed and implemented a Data Warehouse over AdventureWorks 2022 using the Hefesto methodology: a star schema with sales fact tables and product, salesperson, date, territory and currency dimensions.',
@@ -466,7 +466,7 @@ export const projects = [
         title: 'Videojuego 2D con Arquitectura Limpia',
         tagline: 'Juego 2D en Unity que aplica arquitectura limpia, inyección de dependencias y persistencia local.',
         overview:
-          'Videojuego 2D en Unity que demuestra que los principios de arquitectura de software empresarial también aplican al desarrollo de juegos: arquitectura limpia por capas, inyección de dependencias y persistencia local con SQLite.',
+          'Videojuego 2D en Unity concebido para demostrar que los principios de arquitectura de software empresarial también aplican al desarrollo de juegos. Separa la lógica del motor en capas (dominio, aplicación, infraestructura y presentación), usa inyección de dependencias con Zenject y persiste el estado con SQLite, manteniendo el código testeable y mantenible. Combina mecánicas de juego con patrones de diseño y un sistema completo de cuentas y guardado de partida.',
         role: 'Sistema de autenticación y persistencia, y todas las pantallas del juego.',
         features: [
           'Implementé el sistema de autenticación y persistencia del juego: login, registro y guardado/carga de partida con SQLite bajo arquitectura limpia con inyección de dependencias (Zenject).',
@@ -477,7 +477,7 @@ export const projects = [
         title: '2D Game with Clean Architecture',
         tagline: 'A 2D Unity game applying clean architecture, dependency injection and local persistence.',
         overview:
-          'A 2D Unity game proving that enterprise software-architecture principles also apply to game development: layered clean architecture, dependency injection and local persistence with SQLite.',
+          'A 2D Unity game conceived to prove that enterprise software-architecture principles also apply to game development. It separates game logic from the engine into layers (domain, application, infrastructure and presentation), uses dependency injection with Zenject and persists state with SQLite, keeping the code testable and maintainable. It blends game mechanics with design patterns and a complete accounts and save-game system.',
         role: 'Authentication & persistence system and all game screens.',
         features: [
           'Implemented the game’s authentication and persistence system: login, registration and save/load with SQLite under clean architecture with dependency injection (Zenject).',
@@ -500,7 +500,7 @@ export const projects = [
         title: 'Sitio Web de Campaña Electoral',
         tagline: 'Plataforma electoral con información de candidatos, propuestas, eventos y estadísticas.',
         overview:
-          'Plataforma web de campaña electoral universitaria que reúne la información de candidatos, propuestas, eventos, noticias y estadísticas de votación en un solo sitio, construida con Laravel y Blade.',
+          'Plataforma web de campaña para una elección universitaria que reúne en un solo sitio la presentación del candidato, sus propuestas, eventos, noticias y estadísticas de votación. Construida con Laravel y Blade sobre MySQL, incluye una página de inicio dinámica con misión y visión, propuestas destacadas, próximos eventos, cuenta regresiva y un contador de apoyos en tiempo real alimentado desde la base de datos.',
         role: 'Estructura base del sitio y página de inicio con datos dinámicos.',
         features: [
           'Construí la estructura base del sitio (header, navbar, footer) e implementé la página de inicio completa con datos dinámicos: presentación del candidato, misión/visión, propuestas, próximos eventos y cuenta regresiva con contador de apoyos en tiempo real.',
@@ -511,7 +511,7 @@ export const projects = [
         title: 'Electoral Campaign Website',
         tagline: 'An electoral platform with candidate info, proposals, events and statistics.',
         overview:
-          'An electoral campaign web platform for a university election that gathers candidates, proposals, events, news and voting stats in a single site, built with Laravel and Blade.',
+          'A campaign web platform for a university election that gathers in a single site the candidate presentation, proposals, events, news and voting statistics. Built with Laravel and Blade over MySQL, it includes a dynamic home page with mission and vision, featured proposals, upcoming events, a countdown and a real-time support counter fed from the database.',
         role: 'Base site structure and the data-driven home page.',
         features: [
           'Built the base site structure (header, navbar, footer) and implemented the full home page with dynamic data: candidate presentation, mission/vision, proposals, upcoming events and a voting countdown with a real-time support counter.',
@@ -534,7 +534,7 @@ export const projects = [
         title: 'Plataforma de Portafolios Creativos',
         tagline: 'Aplicación web sin frameworks con autenticación completa y área de usuario.',
         overview:
-          'Plataforma web para crear portafolios personales y publicaciones, con autenticación y área de usuario, construida sin frameworks (PHP puro) como proyecto de fundamentos.',
+          'Plataforma web para que cualquier persona cree su portafolio personal y publique su trabajo, con registro, inicio de sesión, recuperación de contraseña y un área de usuario. Construida sin frameworks (PHP puro sobre MySQL) como proyecto de fundamentos, poniendo el foco en entender desde cero la autenticación, la seguridad de contraseñas y la estructura de una aplicación web.',
         role: 'Estructura base de la aplicación y módulo de autenticación.',
         features: [
           'Desarrollé la estructura base de la aplicación: landing page, navegación, layout del área autenticada y páginas de error.',
@@ -545,7 +545,7 @@ export const projects = [
         title: 'Creative Portfolio Platform',
         tagline: 'A framework-free web app with complete authentication and a user area.',
         overview:
-          'A web platform to create personal portfolios and posts, with authentication and a user area, built without frameworks (vanilla PHP) as a fundamentals project.',
+          'A web platform for anyone to create their personal portfolio and publish their work, with registration, login, password recovery and a user area. Built without frameworks (vanilla PHP over MySQL) as a fundamentals project, focusing on understanding authentication, password security and the structure of a web application from scratch.',
         role: 'Base application structure and the authentication module.',
         features: [
           'Developed the base application structure: landing page, navigation, authenticated-area layout and error pages.',
