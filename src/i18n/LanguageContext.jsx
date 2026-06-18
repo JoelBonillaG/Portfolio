@@ -1,0 +1,61 @@
+import { createContext, useCallback, useEffect, useMemo, useState } from 'react'
+import { es } from './translations/es.js'
+import { en } from './translations/en.js'
+
+const STORAGE_KEY = 'lang'
+const DICTIONARIES = { es, en }
+export const SUPPORTED_LANGS = ['es', 'en']
+
+export const LanguageContext = createContext(null)
+
+function detectBrowserLang() {
+  if (typeof navigator === 'undefined') return 'es'
+  const candidates = navigator.languages?.length
+    ? navigator.languages
+    : [navigator.language]
+  for (const lang of candidates) {
+    const base = lang?.toLowerCase().split('-')[0]
+    if (SUPPORTED_LANGS.includes(base)) return base
+  }
+  return 'es'
+}
+
+function getInitialLang() {
+  if (typeof window === 'undefined') return 'es'
+  const stored = localStorage.getItem(STORAGE_KEY)
+  if (SUPPORTED_LANGS.includes(stored)) return stored
+  return detectBrowserLang()
+}
+
+/**
+ * Provides the active language and its dictionary.
+ * First load follows the browser language; an explicit choice is persisted.
+ */
+export function LanguageProvider({ children }) {
+  const [lang, setLang] = useState(getInitialLang)
+
+  useEffect(() => {
+    document.documentElement.lang = lang
+  }, [lang])
+
+  const changeLang = useCallback((next) => {
+    if (!SUPPORTED_LANGS.includes(next)) return
+    localStorage.setItem(STORAGE_KEY, next)
+    setLang(next)
+  }, [])
+
+  const toggleLang = useCallback(() => {
+    changeLang(lang === 'es' ? 'en' : 'es')
+  }, [lang, changeLang])
+
+  const value = useMemo(
+    () => ({ lang, dict: DICTIONARIES[lang], changeLang, toggleLang }),
+    [lang, changeLang, toggleLang],
+  )
+
+  return (
+    <LanguageContext.Provider value={value}>
+      {children}
+    </LanguageContext.Provider>
+  )
+}
