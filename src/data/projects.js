@@ -32,7 +32,7 @@ export const projects = [
       'React',
     ],
     links: { repo: 'https://github.com/JoelBonillaG/Plate_Detection_Segmentation_OCR', demo: null },
-    images: [],
+    images: ['/projects/deteccion-vehicular/1.png', '/projects/deteccion-vehicular/2.png', '/projects/deteccion-vehicular/3.png', '/projects/deteccion-vehicular/4.png'],
     content: {
       es: {
         title: 'Reconocimiento de Placas y Monitoreo Vehicular',
@@ -72,7 +72,7 @@ export const projects = [
       'Genetic Algorithms',
     ],
     links: { repo: 'https://github.com/JoelBonillaG/Fuzzy-Genetic-Maternal-Risk-Assessment', demo: 'https://med-maternal-risk.stratiumhub.com' },
-    images: [],
+    images: ['/projects/riesgo-materno/1.png', '/projects/riesgo-materno/2.png', '/projects/riesgo-materno/3.png'],
     content: {
       es: {
         title: 'Evaluación de Riesgo Materno (Difuso-Genético)',
@@ -115,7 +115,7 @@ export const projects = [
       'CI/CD',
     ],
     links: { repo: 'https://github.com/JoelBonillaG/petsafe_movil_app', demo: 'https://pet-safe-six.vercel.app/login' },
-    images: [],
+    images: ['/projects/petsafe/1.webp'],
     content: {
       es: {
         title: 'Gestión de Clínica Veterinaria (PetSafe)',
@@ -158,7 +158,7 @@ export const projects = [
       'Docker',
     ],
     links: { repo: 'https://github.com/JosueGarciaAbata/hospital-management-system', demo: null },
-    images: [],
+    images: ['/projects/hospital/1.png', '/projects/hospital/2.png', '/projects/hospital/3.png', '/projects/hospital/4.png', '/projects/hospital/5.png'],
     content: {
       es: {
         title: 'Sistema de Gestión Hospitalaria',
@@ -201,7 +201,7 @@ export const projects = [
       'Docker',
     ],
     links: { repo: 'https://github.com/DavidJosueP2/Distributed-Gasoline-System', demo: null },
-    images: [],
+    images: ['/projects/sistema-gasolina/1.png', '/projects/sistema-gasolina/2.png', '/projects/sistema-gasolina/3.png', '/projects/sistema-gasolina/4.png'],
     content: {
       es: {
         title: 'Sistema Distribuido de Gestión de Combustible',
@@ -232,7 +232,7 @@ export const projects = [
     period: { es: 'Oct 2025 – Dic 2025', en: 'Oct 2025 – Dec 2025' },
     stack: ['Spring Boot', 'Java', 'React', 'TypeScript', 'PostgreSQL', 'Docker'],
     links: { repo: 'https://github.com/DavidJosueP2/Marketplace_Link', demo: 'https://marketplace.stratiumhub.com' },
-    images: [],
+    images: ['/projects/marketplace/1.png', '/projects/marketplace/2.png', '/projects/marketplace/3.png', '/projects/marketplace/4.png'],
     content: {
       es: {
         title: 'Gestión y Moderación de Publicaciones (Marketplace Link)',
@@ -271,7 +271,7 @@ export const projects = [
       'Docker',
     ],
     links: { repo: 'https://github.com/DRTX2/clinic', demo: null },
-    images: [],
+    images: ['/projects/cliniccare/1.png', '/projects/cliniccare/2.png', '/projects/cliniccare/3.png', '/projects/cliniccare/4.png', '/projects/cliniccare/5.png'],
     content: {
       es: {
         title: 'Sistema de Gestión Clínica (ClinicCare)',
@@ -302,7 +302,7 @@ export const projects = [
     period: { es: 'Abr 2026 – Jun 2026', en: 'Apr 2026 – Jun 2026' },
     stack: ['Odoo 18', 'Python', 'PostgreSQL', 'Docker', 'XML'],
     links: { repo: 'https://github.com/JoelBonillaG/iron_zone_odoo_das', demo: 'https://iron-zone.stratiumhub.com' },
-    images: [],
+    images: ['/projects/iron-zone/1.png', '/projects/iron-zone/2.png', '/projects/iron-zone/3.png', '/projects/iron-zone/4.png', '/projects/iron-zone/5.png'],
     content: {
       es: {
         title: 'Iron Zone — Gestión de Gimnasio',
@@ -395,7 +395,7 @@ export const projects = [
     period: { es: 'Dic 2024 – Ene 2025', en: 'Dec 2024 – Jan 2025' },
     stack: ['Laravel', 'PHP', 'React', 'PostgreSQL', 'JWT'],
     links: { repo: 'https://github.com/JosueGarciaAbata/agiles-proyecto', demo: null },
-    images: [],
+    images: ['/projects/mantenimiento-equipos/1.png'],
     content: {
       es: {
         title: 'Gestión de Mantenimiento de Equipos',
@@ -488,7 +488,7 @@ export const projects = [
     period: { es: 'Oct 2024', en: 'Oct 2024' },
     stack: ['Laravel', 'PHP', 'Blade', 'Tailwind CSS', 'MySQL'],
     links: { repo: 'https://github.com/JoelBonillaG/Pagina_Votaciones_UTA', demo: null },
-    images: [],
+    images: ['/projects/pagina-votaciones/1.jpeg'],
     content: {
       es: {
         title: 'Sitio Web de Campaña Electoral',
