@@ -1,12 +1,11 @@
-import { createContext, useCallback, useEffect, useMemo, useState } from 'react'
-import { es } from './translations/es.js'
-import { en } from './translations/en.js'
+import { useCallback, useEffect, useMemo, useState } from 'react'
+import {
+  DICTIONARIES,
+  LanguageContext,
+  SUPPORTED_LANGS,
+} from './languageContext.js'
 
 const STORAGE_KEY = 'lang'
-const DICTIONARIES = { es, en }
-export const SUPPORTED_LANGS = ['es', 'en']
-
-export const LanguageContext = createContext(null)
 
 function detectBrowserLang() {
   if (typeof navigator === 'undefined') return 'es'

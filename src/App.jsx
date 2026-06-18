@@ -1,5 +1,5 @@
-import { ThemeProvider } from '@/theme/ThemeContext.jsx'
-import { LanguageProvider } from '@/i18n/LanguageContext.jsx'
+import { ThemeProvider } from '@/theme/ThemeProvider.jsx'
+import { LanguageProvider } from '@/i18n/LanguageProvider.jsx'
 import { Navbar } from '@/components/layout/Navbar.jsx'
 import { Footer } from '@/components/layout/Footer.jsx'
 import { Hero } from '@/sections/Hero/Hero.jsx'

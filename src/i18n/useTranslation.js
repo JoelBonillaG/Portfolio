@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { LanguageContext } from './LanguageContext.jsx'
+import { LanguageContext } from './languageContext.js'
 
 /**
  * Access translations and the active language.

@@ -1,8 +1,7 @@
-import { createContext, useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
+import { ThemeContext } from './themeContext.js'
 
 const STORAGE_KEY = 'theme'
-
-export const ThemeContext = createContext(null)
 
 function getSystemTheme() {
   if (typeof window === 'undefined') return 'light'
