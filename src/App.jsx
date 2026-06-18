@@ -1,8 +1,20 @@
+import { ThemeProvider } from '@/theme/ThemeContext.jsx'
+import { LanguageProvider } from '@/i18n/LanguageContext.jsx'
+import { Navbar } from '@/components/layout/Navbar.jsx'
+import { Footer } from '@/components/layout/Footer.jsx'
+import { Hero } from '@/sections/Hero/Hero.jsx'
+
 function App() {
   return (
-    <main className="grid min-h-svh place-items-center bg-bg text-fg">
-      <p className="font-mono text-sm text-muted">Portafolio en construcción…</p>
-    </main>
+    <ThemeProvider>
+      <LanguageProvider>
+        <Navbar />
+        <main>
+          <Hero />
+        </main>
+        <Footer />
+      </LanguageProvider>
+    </ThemeProvider>
   )
 }
 

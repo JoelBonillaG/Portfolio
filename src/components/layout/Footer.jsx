@@ -1,15 +1,16 @@
-import { Github, Linkedin, Mail } from 'lucide-react'
+import { Mail } from 'lucide-react'
 import { NAV_ITEMS } from '@/data/nav.js'
 import { profile } from '@/data/profile.js'
 import { useTranslation } from '@/i18n/useTranslation.js'
+import { GithubIcon, LinkedinIcon } from '@/components/ui'
 
 export function Footer() {
   const { t } = useTranslation()
   const year = new Date().getFullYear()
 
   const socials = [
-    { href: profile.socials.github, icon: Github, label: 'GitHub' },
-    { href: profile.socials.linkedin, icon: Linkedin, label: 'LinkedIn' },
+    { href: profile.socials.github, icon: GithubIcon, label: 'GitHub' },
+    { href: profile.socials.linkedin, icon: LinkedinIcon, label: 'LinkedIn' },
     { href: `mailto:${profile.email}`, icon: Mail, label: 'Email' },
   ]
 

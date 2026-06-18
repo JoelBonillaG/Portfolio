@@ -1,4 +1,5 @@
 export { Badge } from './Badge.jsx'
+export { GithubIcon, LinkedinIcon } from './BrandIcons.jsx'
 export { Button } from './Button.jsx'
 export { LanguageToggle } from './LanguageToggle.jsx'
 export { Reveal } from './Reveal.jsx'
