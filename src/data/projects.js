@@ -65,7 +65,7 @@ export const projects = [
     period: { es: 'Abr 2026 – Jun 2026', en: 'Apr 2026 – Jun 2026' },
     stack: ['Python', 'FastAPI', 'React', 'TypeScript', 'Fuzzy Logic', 'Genetic Algorithms'],
     links: { repo: 'https://github.com/JoelBonillaG/Fuzzy-Genetic-Maternal-Risk-Assessment', demo: 'https://med-maternal-risk.stratiumhub.com' },
-    images: ['/projects/riesgo-materno/1.png', '/projects/riesgo-materno/2.png', '/projects/riesgo-materno/3.png'],
+    images: ['/projects/riesgo-materno/2.png', '/projects/riesgo-materno/1.png', '/projects/riesgo-materno/3.png'],
     metrics: [
       { value: '159', label: { es: 'reglas aprendidas (de 8.640)', en: 'learned rules (of 8,640)' } },
       { value: '3', label: { es: 'niveles de riesgo', en: 'risk levels' } },
@@ -144,7 +144,7 @@ export const projects = [
     period: { es: 'Sep 2025 – Oct 2025', en: 'Sep 2025 – Oct 2025' },
     stack: ['Spring Boot 3', 'Java 17', 'Spring Cloud', 'Eureka', 'API Gateway', 'OpenFeign', 'PostgreSQL', 'React', 'Docker'],
     links: { repo: 'https://github.com/JosueGarciaAbata/hospital-management-system', demo: null },
-    images: ['/projects/hospital/1.png', '/projects/hospital/2.png', '/projects/hospital/3.png', '/projects/hospital/4.png', '/projects/hospital/5.png'],
+    images: ['/projects/hospital/5.png', '/projects/hospital/1.png', '/projects/hospital/2.png', '/projects/hospital/3.png', '/projects/hospital/4.png'],
     metrics: [
       { value: '4', label: { es: 'microservicios tras el gateway', en: 'microservices behind the gateway' } },
     ],
@@ -216,7 +216,7 @@ export const projects = [
     period: { es: 'Oct 2025 – Dic 2025', en: 'Oct 2025 – Dec 2025' },
     stack: ['Spring Boot', 'Java', 'React', 'TypeScript', 'PostgreSQL', 'Docker'],
     links: { repo: 'https://github.com/DavidJosueP2/Marketplace_Link', demo: 'https://marketplace.stratiumhub.com' },
-    images: ['/projects/marketplace/1.png', '/projects/marketplace/2.png', '/projects/marketplace/3.png', '/projects/marketplace/4.png'],
+    images: ['/projects/marketplace/4.png', '/projects/marketplace/1.png', '/projects/marketplace/2.png', '/projects/marketplace/3.png'],
     metrics: [
       { value: '90%', label: { es: 'cobertura de pruebas', en: 'test coverage' } },
       { value: '85%', label: { es: 'respuesta más rápida', en: 'faster API response' } },
@@ -249,7 +249,7 @@ export const projects = [
   {
     id: 'cliniccare',
     category: 'fullstack',
-    featured: false,
+    featured: true,
     period: { es: 'Sep 2025 – Oct 2025', en: 'Sep 2025 – Oct 2025' },
     stack: ['Spring Boot', 'Java 21', 'React', 'PostgreSQL', 'JWT', 'Spring Mail', 'Docker'],
     links: { repo: 'https://github.com/DRTX2/clinic', demo: null },
@@ -287,7 +287,7 @@ export const projects = [
     period: { es: 'Abr 2026 – Jun 2026', en: 'Apr 2026 – Jun 2026' },
     stack: ['Odoo 18', 'Python', 'PostgreSQL', 'Docker', 'XML'],
     links: { repo: 'https://github.com/JoelBonillaG/iron_zone_odoo_das', demo: 'https://iron-zone.stratiumhub.com' },
-    images: ['/projects/iron-zone/1.png', '/projects/iron-zone/2.png', '/projects/iron-zone/3.png', '/projects/iron-zone/4.png', '/projects/iron-zone/5.png'],
+    images: ['/projects/iron-zone/3.png', '/projects/iron-zone/1.png', '/projects/iron-zone/2.png', '/projects/iron-zone/4.png', '/projects/iron-zone/5.png'],
     metrics: [
       { value: '11', label: { es: 'módulos a medida sobre Odoo', en: 'custom Odoo modules' } },
     ],
@@ -319,7 +319,7 @@ export const projects = [
   {
     id: 'microplus',
     category: 'mobile',
-    featured: true,
+    featured: false,
     period: { es: '2025', en: '2025' },
     stack: ['Flutter', 'Dart', 'Firebase Cloud Messaging', 'Provider', 'REST API'],
     links: { repo: null, demo: null },

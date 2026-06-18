@@ -76,7 +76,7 @@ export function ProjectModal({ project, onClose }) {
 
           {/* About the project */}
           <Block label={t('projects.overview')}>
-            <p className="text-sm leading-relaxed text-fg">{c.overview}</p>
+            <p className="text-base leading-relaxed text-fg">{c.overview}</p>
           </Block>
 
           {/* Metrics */}
@@ -109,11 +109,11 @@ export function ProjectModal({ project, onClose }) {
 
           {/* My contribution */}
           <Block label={t('projects.role')}>
-            <p className="mb-3 text-sm font-medium text-fg">{c.role}</p>
+            <p className="mb-3 text-[15px] font-medium text-fg">{c.role}</p>
             <ul className="flex flex-col gap-2.5">
               {c.features.map((feature, i) => (
-                <li key={i} className="flex gap-2.5 text-sm leading-relaxed text-muted">
-                  <Check size={16} className="mt-0.5 shrink-0 text-accent" />
+                <li key={i} className="flex gap-2.5 text-[15px] leading-relaxed text-muted">
+                  <Check size={18} className="mt-0.5 shrink-0 text-accent" />
                   <span>{feature}</span>
                 </li>
               ))}
