@@ -1,7 +1,8 @@
 import { useTranslation } from '@/i18n/useTranslation.js'
-import { Badge, DynamicIcon } from '@/components/ui'
+import { DynamicIcon } from '@/components/ui'
+import { TechBadge } from './TechBadge.jsx'
 
-/** One technical-skill category: icon, name and its technology tags. */
+/** One technical-skill category: icon, name and its technology chips. */
 export function SkillCategoryCard({ category }) {
   const { lang } = useTranslation()
 
@@ -15,9 +16,9 @@ export function SkillCategoryCard({ category }) {
           {category.name[lang]}
         </h4>
       </div>
-      <div className="flex flex-wrap gap-1.5">
+      <div className="flex flex-wrap gap-2">
         {category.items.map((item) => (
-          <Badge key={item}>{item}</Badge>
+          <TechBadge key={item} name={item} />
         ))}
       </div>
     </div>
