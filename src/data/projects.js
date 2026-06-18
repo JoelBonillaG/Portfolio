@@ -459,7 +459,7 @@ export const projects = [
     period: { es: 'Jun 2025 – Jul 2025', en: 'Jun 2025 – Jul 2025' },
     stack: ['Unity', 'C#', 'Zenject', 'SQLite', 'Clean Architecture'],
     links: { repo: 'https://github.com/DRTX2/PatternsProject', demo: null },
-    images: [],
+    images: ['/projects/unity-game/1.jpeg'],
     metrics: [],
     content: {
       es: {
@@ -527,7 +527,7 @@ export const projects = [
     period: { es: 'Mar 2024 – Abr 2024', en: 'Mar 2024 – Apr 2024' },
     stack: ['PHP', 'MySQL', 'HTML', 'CSS', 'JavaScript'],
     links: { repo: 'https://github.com/JosueGarciaAbata/proyecto-mds', demo: null },
-    images: [],
+    images: ['/projects/creative-portfolio/1.jpeg'],
     metrics: [],
     content: {
       es: {
