@@ -1,4 +1,4 @@
-import { Check, Copy, Mail, MapPin, Phone, Send } from 'lucide-react'
+import { Check, Copy, Mail, Phone, Send } from 'lucide-react'
 import { profile } from '@/data/profile.js'
 import { useTranslation } from '@/i18n/useTranslation.js'
 import { useCopyToClipboard } from '@/hooks/useCopyToClipboard.js'
@@ -29,12 +29,6 @@ export function Contact() {
       value: profile.phone,
       href: `tel:${profile.phoneHref}`,
     },
-    {
-      icon: MapPin,
-      label: t('contact.locationLabel'),
-      value: t('contact.location'),
-      href: null,
-    },
   ]
 
   const socials = [
@@ -50,7 +44,7 @@ export function Contact() {
         subtitle={t('contact.subtitle')}
       />
 
-      <div className="mx-auto mt-12 grid max-w-3xl gap-4 sm:grid-cols-3">
+      <div className="mx-auto mt-12 grid max-w-xl gap-4 sm:grid-cols-2">
         {methods.map(({ icon: Icon, label, value, href, copyable }, i) => (
           <Reveal
             key={label}

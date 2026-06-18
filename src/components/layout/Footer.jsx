@@ -56,11 +56,10 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-between gap-2 border-t border-border pt-6 text-center text-xs text-muted sm:flex-row sm:text-left">
+        <div className="border-t border-border pt-6 text-center text-xs text-muted">
           <p>
             © {year} {profile.name}. {t('footer.rights')}
           </p>
-          <p>{t('footer.builtWith')}</p>
         </div>
       </div>
     </footer>
