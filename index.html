@@ -30,6 +30,19 @@
     <title>Joel Bonilla — Ingeniero de Software</title>
   </head>
   <body>
+    <!-- Apply theme before paint to avoid a flash of the wrong mode. -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme')
+          var dark =
+            stored === 'dark' ||
+            (!stored &&
+              window.matchMedia('(prefers-color-scheme: dark)').matches)
+          document.documentElement.classList.toggle('dark', dark)
+        } catch (e) {}
+      })()
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
