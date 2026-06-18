@@ -31,7 +31,7 @@ export const projects = [
       'FastAPI',
       'React',
     ],
-    links: { repo: null, demo: null },
+    links: { repo: 'https://github.com/JoelBonillaG/Plate_Detection_Segmentation_OCR', demo: null },
     images: [],
     content: {
       es: {
@@ -71,10 +71,7 @@ export const projects = [
       'Fuzzy Logic',
       'Genetic Algorithms',
     ],
-    links: {
-      repo: 'https://github.com/JoelBonillaG/Fuzzy-Genetic-Maternal-Risk-Assessment',
-      demo: null,
-    },
+    links: { repo: 'https://github.com/JoelBonillaG/Fuzzy-Genetic-Maternal-Risk-Assessment', demo: 'https://med-maternal-risk.stratiumhub.com' },
     images: [],
     content: {
       es: {
@@ -117,7 +114,7 @@ export const projects = [
       'Docker',
       'CI/CD',
     ],
-    links: { repo: null, demo: null },
+    links: { repo: 'https://github.com/JoelBonillaG/petsafe_movil_app', demo: 'https://pet-safe-six.vercel.app/login' },
     images: [],
     content: {
       es: {
@@ -160,7 +157,7 @@ export const projects = [
       'React',
       'Docker',
     ],
-    links: { repo: null, demo: null },
+    links: { repo: 'https://github.com/JosueGarciaAbata/hospital-management-system', demo: null },
     images: [],
     content: {
       es: {
@@ -203,7 +200,7 @@ export const projects = [
       'RabbitMQ',
       'Docker',
     ],
-    links: { repo: null, demo: null },
+    links: { repo: 'https://github.com/DavidJosueP2/Distributed-Gasoline-System', demo: null },
     images: [],
     content: {
       es: {
@@ -234,7 +231,7 @@ export const projects = [
     featured: false,
     period: { es: 'Oct 2025 – Dic 2025', en: 'Oct 2025 – Dec 2025' },
     stack: ['Spring Boot', 'Java', 'React', 'TypeScript', 'PostgreSQL', 'Docker'],
-    links: { repo: null, demo: null },
+    links: { repo: 'https://github.com/DavidJosueP2/Marketplace_Link', demo: 'https://marketplace.stratiumhub.com' },
     images: [],
     content: {
       es: {
@@ -273,7 +270,7 @@ export const projects = [
       'Spring Mail',
       'Docker',
     ],
-    links: { repo: null, demo: null },
+    links: { repo: 'https://github.com/DRTX2/clinic', demo: null },
     images: [],
     content: {
       es: {
@@ -304,7 +301,7 @@ export const projects = [
     featured: false,
     period: { es: 'Abr 2026 – Jun 2026', en: 'Apr 2026 – Jun 2026' },
     stack: ['Odoo 18', 'Python', 'PostgreSQL', 'Docker', 'XML'],
-    links: { repo: null, demo: null },
+    links: { repo: 'https://github.com/JoelBonillaG/iron_zone_odoo_das', demo: 'https://iron-zone.stratiumhub.com' },
     images: [],
     content: {
       es: {
@@ -366,7 +363,7 @@ export const projects = [
     featured: false,
     period: { es: 'Abr 2025', en: 'Apr 2025' },
     stack: ['Laravel', 'PHP', 'React', 'PostgreSQL', 'JWT'],
-    links: { repo: null, demo: null },
+    links: { repo: 'https://github.com/JosueGarciaAbata/savings_financial_goals', demo: null },
     images: [],
     content: {
       es: {
@@ -397,7 +394,7 @@ export const projects = [
     featured: false,
     period: { es: 'Dic 2024 – Ene 2025', en: 'Dec 2024 – Jan 2025' },
     stack: ['Laravel', 'PHP', 'React', 'PostgreSQL', 'JWT'],
-    links: { repo: null, demo: null },
+    links: { repo: 'https://github.com/JosueGarciaAbata/agiles-proyecto', demo: null },
     images: [],
     content: {
       es: {
@@ -428,7 +425,7 @@ export const projects = [
     featured: false,
     period: { es: '2025', en: '2025' },
     stack: ['SQL Server', 'SSIS', 'SSAS', 'MDX', 'Excel'],
-    links: { repo: null, demo: null },
+    links: { repo: 'https://github.com/JoelBonillaG/Proyecto_Hefesto', demo: null },
     images: [],
     content: {
       es: {
@@ -459,7 +456,7 @@ export const projects = [
     featured: false,
     period: { es: 'Jun 2025 – Jul 2025', en: 'Jun 2025 – Jul 2025' },
     stack: ['Unity', 'C#', 'Zenject', 'SQLite', 'Clean Architecture'],
-    links: { repo: null, demo: null },
+    links: { repo: 'https://github.com/DRTX2/PatternsProject', demo: null },
     images: [],
     content: {
       es: {
@@ -490,7 +487,7 @@ export const projects = [
     featured: false,
     period: { es: 'Oct 2024', en: 'Oct 2024' },
     stack: ['Laravel', 'PHP', 'Blade', 'Tailwind CSS', 'MySQL'],
-    links: { repo: null, demo: null },
+    links: { repo: 'https://github.com/JoelBonillaG/Pagina_Votaciones_UTA', demo: null },
     images: [],
     content: {
       es: {
@@ -521,7 +518,7 @@ export const projects = [
     featured: false,
     period: { es: 'Mar 2024 – Abr 2024', en: 'Mar 2024 – Apr 2024' },
     stack: ['PHP', 'MySQL', 'HTML', 'CSS', 'JavaScript'],
-    links: { repo: null, demo: null },
+    links: { repo: 'https://github.com/JosueGarciaAbata/proyecto-mds', demo: null },
     images: [],
     content: {
       es: {
