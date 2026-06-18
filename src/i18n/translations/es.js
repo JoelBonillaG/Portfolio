@@ -30,6 +30,7 @@ export const es = {
       other: 'Web & Juegos',
     },
     viewMore: 'Ver detalles',
+    featured: 'Destacado',
     repo: 'Código',
     demo: 'Demo',
     role: 'Mi rol',
