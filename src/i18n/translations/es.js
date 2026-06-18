@@ -42,6 +42,8 @@ export const es = {
     galleryEmpty: 'Galería de imágenes próximamente.',
     close: 'Cerrar',
     empty: 'No hay proyectos en esta categoría.',
+    showMore: 'Ver más proyectos',
+    showLess: 'Ver menos',
   },
   skills: {
     title: 'Habilidades',

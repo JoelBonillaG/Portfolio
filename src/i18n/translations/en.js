@@ -42,6 +42,8 @@ export const en = {
     galleryEmpty: 'Image gallery coming soon.',
     close: 'Close',
     empty: 'No projects in this category.',
+    showMore: 'Show more projects',
+    showLess: 'Show less',
   },
   skills: {
     title: 'Skills',
