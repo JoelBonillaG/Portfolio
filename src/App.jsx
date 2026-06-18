@@ -5,6 +5,7 @@ import { Footer } from '@/components/layout/Footer.jsx'
 import { Hero } from '@/sections/Hero/Hero.jsx'
 import { Projects } from '@/sections/Projects/Projects.jsx'
 import { Skills } from '@/sections/Skills/Skills.jsx'
+import { Contact } from '@/sections/Contact/Contact.jsx'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Hero />
           <Projects />
           <Skills />
+          <Contact />
         </main>
         <Footer />
       </LanguageProvider>
