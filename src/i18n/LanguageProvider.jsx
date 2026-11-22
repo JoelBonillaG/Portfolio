@@ -4,8 +4,9 @@ import { LanguageContext } from './languageContext.js'
 
 const STORAGE_KEY = 'lang'
 
+/** Browser language when it is Spanish or English; anything else falls back to English. */
 function detectBrowserLang() {
-  if (typeof navigator === 'undefined') return 'es'
+  if (typeof navigator === 'undefined') return 'en'
   const candidates = navigator.languages?.length
     ? navigator.languages
     : [navigator.language]
@@ -13,11 +14,11 @@ function detectBrowserLang() {
     const base = lang?.toLowerCase().split('-')[0]
     if (SUPPORTED_LANGS.includes(base)) return base
   }
-  return 'es'
+  return 'en'
 }
 
 function getInitialLang() {
-  if (typeof window === 'undefined') return 'es'
+  if (typeof window === 'undefined') return 'en'
   const stored = localStorage.getItem(STORAGE_KEY)
   if (SUPPORTED_LANGS.includes(stored)) return stored
   return detectBrowserLang()
