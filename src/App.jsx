@@ -1,24 +1,29 @@
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { ThemeProvider } from '@/theme/ThemeProvider.jsx'
 import { LanguageProvider } from '@/i18n/LanguageProvider.jsx'
-import { Navbar } from '@/components/layout/Navbar.jsx'
+import { Header } from '@/components/layout/Header.jsx'
 import { Footer } from '@/components/layout/Footer.jsx'
-import { Hero } from '@/sections/Hero/Hero.jsx'
-import { Projects } from '@/sections/Projects/Projects.jsx'
-import { Skills } from '@/sections/Skills/Skills.jsx'
-import { Contact } from '@/sections/Contact/Contact.jsx'
+import { RobotCompanion } from '@/components/layout/RobotCompanion.jsx'
+import { ScrollManager } from '@/components/layout/ScrollManager.jsx'
+import { Home } from '@/pages/Home.jsx'
+import { ProjectDetail } from '@/pages/ProjectDetail.jsx'
 
 function App() {
   return (
     <ThemeProvider>
       <LanguageProvider>
-        <Navbar />
-        <main>
-          <Hero />
-          <Projects />
-          <Skills />
-          <Contact />
-        </main>
-        <Footer />
+        <BrowserRouter>
+          <ScrollManager />
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/proyectos" element={<Navigate to="/#proyectos" replace />} />
+            <Route path="/proyectos/:id" element={<ProjectDetail />} />
+            <Route path="*" element={<Home />} />
+          </Routes>
+          <Footer />
+          <RobotCompanion />
+        </BrowserRouter>
       </LanguageProvider>
     </ThemeProvider>
   )

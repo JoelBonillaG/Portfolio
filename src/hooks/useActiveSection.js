@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
  * @param {string[]} ids - section ids to observe
  */
 export function useActiveSection(ids) {
-  const [active, setActive] = useState(ids[0])
+  const [active, setActive] = useState(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(

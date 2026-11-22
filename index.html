@@ -4,30 +4,24 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Portafolio de Fernando Joel Bonilla — Ingeniero de Software. Desarrollo full-stack, microservicios, IA y aplicaciones móviles."
-    />
+    <meta name="description" content="Joel Bonilla, desarrollador full stack. Construyo aplicaciones web completas, de la base de datos a la interfaz." />
     <meta name="author" content="Fernando Joel Bonilla Guerrero" />
-    <meta name="theme-color" content="#2C2C2A" />
+    <meta name="theme-color" content="#0F1A2A" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Joel Bonilla — Ingeniero de Software" />
-    <meta
-      property="og:description"
-      content="Portafolio de proyectos: full-stack, microservicios, IA y móvil."
-    />
+    <meta property="og:title" content="Joel Bonilla · Ingeniero de Software, full stack" />
+    <meta property="og:description" content="Construyo aplicaciones web completas, de la base de datos a la interfaz, para resolver problemas reales." />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
-    <title>Joel Bonilla — Ingeniero de Software</title>
+    <title>Joel Bonilla · Desarrollador full stack</title>
   </head>
   <body>
     <!-- Apply theme before paint to avoid a flash of the wrong mode. -->
@@ -35,11 +29,7 @@
       (function () {
         try {
           var stored = localStorage.getItem('theme')
-          var dark =
-            stored === 'dark' ||
-            (!stored &&
-              window.matchMedia('(prefers-color-scheme: dark)').matches)
-          document.documentElement.classList.toggle('dark', dark)
+          document.documentElement.classList.toggle('dark', stored !== 'light')
         } catch (e) {}
       })()
     </script>
