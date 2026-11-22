@@ -124,6 +124,7 @@ export const es = {
     publication: 'Publicación',
     coauthor: 'Coautor',
     underReview: 'En revisión',
+    events: 'Competencias y congresos',
     certifications: 'Certificaciones',
     view: 'Ver certificado',
     languages: 'Idiomas',

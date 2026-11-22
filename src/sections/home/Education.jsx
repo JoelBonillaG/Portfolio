@@ -6,6 +6,7 @@ import {
   paperUnderReview,
   publication,
 } from '@/data/certifications.js'
+import { events } from '@/data/events.js'
 import { useTranslation } from '@/i18n/useTranslation.js'
 import { TextLink } from '@/components/ui'
 import { SectionHeader } from './SectionHeader.jsx'
@@ -128,6 +129,37 @@ export function Education() {
           </ul>
         </div>
       </div>
+
+      <h3 className="m-0 mt-14 text-[22px] font-bold">{t('education.events')}</h3>
+      <ol className="m-0 mt-4 list-none p-0">
+        {events.map((group) => (
+          <li key={group.year} className="grid gap-x-8 border-t border-line py-6 sm:grid-cols-[80px_1fr]">
+            <p className="m-0 mb-3 font-display text-xl font-semibold text-yellow sm:mb-0">{group.year}</p>
+            <ul className="m-0 flex list-none flex-col gap-6 p-0">
+              {group.items.map((e, i) => (
+                <li key={e.id} data-reveal style={{ '--d': `${i * 90}ms` }} className="reveal-row flex gap-4">
+                  <img
+                    src={e.logo}
+                    alt=""
+                    width={48}
+                    height={48}
+                    loading="lazy"
+                    className="size-12 shrink-0 rounded-xl border border-line bg-white object-contain p-1"
+                  />
+                  <div className="min-w-0 flex-1">
+                    <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                      <p className="m-0 font-bold leading-snug">{e.title[lang]}</p>
+                      <span className="text-sm text-muted">{e.type[lang]}</span>
+                    </div>
+                    <p className="m-0 text-sm text-muted">{e.org}</p>
+                    <p className="m-0 mt-1 text-[15px]">{e.detail[lang]}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ol>
     </section>
   )
 }
