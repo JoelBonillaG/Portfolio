@@ -150,7 +150,6 @@ export const en = {
     copied: 'Email copied',
   },
   footer: {
-    built: 'Built with React and Vite',
   },
   a11y: {
     skip: 'Skip to content',
