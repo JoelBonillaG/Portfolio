@@ -52,5 +52,17 @@ export const techIcons = {
 }
 
 export function getTechIcon(name) {
-  return techIcons[name] ?? null
+  return techIcons[name] ?? extraIcons[name] ?? null
+}
+
+// Hand-maintained: tools devicon doesn't ship. Local SVGs live in /public/tech.
+const SQL_SERVER =
+  'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg'
+const extraIcons = {
+  'T-SQL': SQL_SERVER,
+  SSIS: SQL_SERVER,
+  'Power BI': '/tech/powerbi.svg',
+  'Power BI Service': '/tech/powerbi.svg',
+  DAX: '/tech/dax.svg',
+  'Power Query': '/tech/powerquery.svg',
 }

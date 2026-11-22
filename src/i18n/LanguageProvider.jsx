@@ -1,9 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import {
-  DICTIONARIES,
-  LanguageContext,
-  SUPPORTED_LANGS,
-} from './languageContext.js'
+import { DICTIONARIES, SUPPORTED_LANGS } from './dictionaries.js'
+import { LanguageContext } from './languageContext.js'
 
 const STORAGE_KEY = 'lang'
 

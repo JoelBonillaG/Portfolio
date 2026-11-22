@@ -10,24 +10,188 @@
  *  - featured  highlight + sort to the front.
  *  - period    bilingual date range string.
  *  - stack     technology tags (language-independent).
- *  - links     { repo, demo } — null hides the button.
+ *  - links     { repo, demo, paper? } — null/absent hides the button.
  *  - images    gallery; public paths. images[0] is the card cover.
  *  - metrics   [{ value, label: { es, en } }] — headline numbers. [] if none.
+ *  - team      team size (1 = solo, 0 = team of unknown size). Credit line.
+ *  - focus     fullstack | backend | data-ai | mobile (archive filter).
+ *  - order     position among the 4 featured cards on the home page.
+ *  - hidden    true keeps the entry out of the site.
+ *  - badge     'paper' (published) | 'review' (under review).
+ *  - card      { es, en } → { problem, solution, part, result, flow[3] }
+ *  - status    optional: 'production' shows an "in production" badge.
+ *  - pipeline  optional (AI): ordered stages, string or { es, en }.
  *  - content   { es, en } → { title, tagline, overview, role, features[] }
  *              overview = what the project is · role = my contribution
  */
 export const projects = [
   {
+    id: 'brunexa-inversiones',
+    focus: 'fullstack',
+    order: 1,
+    team: 0,
+    category: 'fullstack',
+    featured: true,
+    period: { es: 'Sep 2026', en: 'Sep 2026' },
+    stack: ['Java', 'Spring Boot', 'React', 'TypeScript', 'PostgreSQL', 'JUnit'],
+    links: { repo: 'https://github.com/DavidJosueP2/Banking-Credit-Investment-Simulator', demo: null },
+    images: ['/projects/brunexa-inversiones/1.webp', '/projects/brunexa-inversiones/2.webp', '/projects/brunexa-inversiones/3.webp', '/projects/brunexa-inversiones/4.webp', '/projects/brunexa-inversiones/5.webp'],
+    metrics: [],
+    card: {
+      es: {
+        problem: 'El cliente no sabe cuánto gana realmente después de la tasa por monto y plazo y la retención del impuesto.',
+        solution: 'Un simulador que calcula el rendimiento real con tasas, retención y costos, y entrega el detalle en PDF.',
+        part: 'Me encargué del módulo completo: los cálculos financieros, la configuración de productos, el reporte descargable y la pantalla del cliente.',
+        result: 'El banco cambia tasas y productos sin programar, y cada cálculo está cubierto por pruebas.',
+        flow: ['Monto y plazo', 'Tasas e impuestos', 'Rendimiento real'],
+      },
+      en: {
+        problem: 'Customers can’t tell how much they really earn once rates by amount and term and income-tax withholding apply.',
+        solution: 'A simulator that computes the real return with rates, withholding and fees, and delivers the breakdown as a PDF.',
+        part: 'I owned the whole module: the financial calculations, product configuration, the downloadable report and the customer screen.',
+        result: 'The bank changes rates and products without coding, and every calculation is covered by tests.',
+        flow: ['Amount and term', 'Rates and taxes', 'Real return'],
+      },
+    },
+    content: {
+      es: {
+        title: 'Brunexa, banca en línea',
+        tagline: 'Banca en línea con simuladores de crédito e inversión y registro con verificación de identidad. Mi parte: el módulo de inversiones.',
+        overview:
+          'Brunexa es una banca en línea desarrollada en equipo. El módulo de inversiones permite a un cliente simular cuánto ganaría con un producto a plazo: la tasa depende del monto y del plazo, se descuentan la retención del impuesto a la renta y los costos adicionales, y el resultado se entrega como una tabla de pagos y un reporte en PDF. El banco configura sus productos, rangos de tasas y retenciones desde un panel de administración, sin tocar código.',
+        role: 'Desarrollé el módulo de inversiones completo, del cálculo a la pantalla del cliente.',
+        features: [
+          'Motor de cálculo con tasas por rangos de monto y plazo, retención del impuesto a la renta y costos adicionales.',
+          'Simulación por meta: el cliente indica cuánto quiere reunir y el sistema le muestra si el plan lo permite.',
+          'Tabla de pagos y reporte descargable en PDF.',
+          'Panel para que el administrador configure productos, tasas y retenciones, con validaciones que evitan rangos incompletos o superpuestos.',
+          'Pruebas unitarias del motor de cálculo.',
+        ],
+      },
+      en: {
+        title: 'Brunexa, online bank',
+        tagline: 'An online bank with credit and investment simulators and sign-up with identity verification. My part: the investment module.',
+        overview:
+          'Brunexa is an online bank built as a team. Its investment module lets a customer simulate how much a term product would earn: the rate depends on amount and term, income-tax withholding and extra fees are deducted, and the result comes as a payment schedule and a PDF report. The bank configures its products, rate ranges and withholdings from an admin panel, without touching code.',
+        role: 'I built the whole investment module, from the calculations to the customer screen.',
+        features: [
+          'Calculation engine with rates by amount and term ranges, income-tax withholding and extra fees.',
+          'Goal-based simulation: the customer sets how much they want to reach and the system shows whether the plan allows it.',
+          'Payment schedule and downloadable PDF report.',
+          'Admin panel to configure products, rates and withholdings, with validations that block incomplete or overlapping ranges.',
+          'Unit tests for the calculation engine.',
+        ],
+      },
+    },
+  },
+  {
+    id: 'procesamiento-imagenes',
+    focus: 'data-ai',
+    team: 0,
+    category: 'ai',
+    featured: false,
+    period: { es: 'Abr 2026', en: 'Apr 2026' },
+    stack: ['Python', 'NumPy', 'OpenCV'],
+    links: { repo: 'https://github.com/JoelBonillaG/procesamiento_imagenes', demo: null },
+    images: ['/projects/procesamiento-imagenes/1.webp', '/projects/procesamiento-imagenes/2.webp', '/projects/procesamiento-imagenes/3.webp'],
+    metrics: [],
+    content: {
+      es: {
+        title: 'Procesamiento digital de imágenes',
+        tagline: 'App de escritorio que muestra cada etapa del procesamiento, de la foto original a las regiones detectadas.',
+        overview:
+          'Una aplicación de escritorio que recorre todo el procesamiento digital de una imagen: escala de grises, ruido, suavizado, realce, umbralización, bordes y extracción de regiones. Cada etapa es un panel interactivo y los filtros están programados desde cero, para ver qué hace cada uno por dentro en lugar de usarlo como una caja negra. Es la base transparente de un sistema de reconocimiento de placas.',
+        role: 'Programé los filtros de suavizado desde cero, sin depender de una librería.',
+        features: [
+          'Implementé los filtros de suavizado con una convolución 2D escrita a mano.',
+          'Los integré en el pipeline interactivo, donde cambiar un parámetro recalcula todas las etapas siguientes.',
+        ],
+      },
+      en: {
+        title: 'Digital image processing',
+        tagline: 'Desktop app that shows every processing stage, from the raw photo to the detected regions.',
+        overview:
+          'A desktop application that walks the full digital image processing pipeline: grayscale, noise, smoothing, sharpening, thresholding, edges and region extraction. Every stage is an interactive panel and the filters are written from scratch, so you can see what each one does inside instead of using it as a black box. It is the transparent groundwork of a plate recognition system.',
+        role: 'I wrote the smoothing filters from scratch, without relying on a library.',
+        features: [
+          'Implemented the smoothing filters with a hand-written 2D convolution.',
+          'Integrated them into the interactive pipeline, where changing a parameter recomputes every later stage.',
+        ],
+      },
+    },
+  },
+  {
+    id: 'textflow',
+    focus: 'fullstack',
+    team: 0,
+    category: 'fullstack',
+    featured: false,
+    period: { es: 'Ago 2026 – Nov 2026', en: 'Aug 2026 – Nov 2026' },
+    stack: ['Angular', 'Spring Boot', 'PostgreSQL', 'Docker'],
+    links: { repo: null, demo: null },
+    images: ['/projects/textflow/1.webp', '/projects/textflow/2.webp', '/projects/textflow/3.webp', '/projects/textflow/4.webp'],
+    metrics: [],
+    content: {
+      es: {
+        title: 'TextFlow · editor LaTeX seguro',
+        tagline: 'Editor web de documentos LaTeX con compilación aislada y seguridad en cada capa.',
+        overview:
+          'TextFlow es un editor web para escribir, compilar y compartir documentos LaTeX, construido en equipo con la seguridad como prioridad: cada documento se compila en un contenedor aislado, los datos viajan y se guardan cifrados, y el acceso se valida por rol en cada proyecto.',
+        role: 'Creé el repositorio base y la primera versión de la sección de proyectos, y di soporte al equipo durante el desarrollo.',
+        features: [
+          'Inicialicé el repositorio y la estructura base del proyecto.',
+          'Construí la primera versión de la sección de proyectos del editor.',
+          'Apoyé al equipo en la coordinación y en el seguimiento del avance.',
+        ],
+      },
+      en: {
+        title: 'TextFlow · secure LaTeX editor',
+        tagline: 'Web LaTeX editor with isolated compilation and security at every layer.',
+        overview:
+          'TextFlow is a web editor to write, compile and share LaTeX documents, built as a team with security first: every document compiles in an isolated container, data travels and is stored encrypted, and access is checked by role on each project.',
+        role: 'I set up the base repository and the first version of the projects section, and supported the team during development.',
+        features: [
+          'Initialized the repository and the project’s base structure.',
+          'Built the first version of the editor’s projects section.',
+          'Supported the team with coordination and progress tracking.',
+        ],
+      },
+    },
+  },
+  {
     id: 'deteccion-vehicular',
+    badge: 'paper',
+    focus: 'data-ai',
+    order: 4,
+    card: {
+      es: {
+        title: 'Lectura automática de placas',
+        problem: 'El control vehicular en accesos es manual, lento y no deja registro.',
+        solution: 'Un sistema que reconoce el vehículo con una cámara, lee su placa y propone una sanción explicable según velocidad y reincidencia.',
+        part: 'Entrené los modelos que leen cada carácter de la placa y diseñé las reglas que proponen la sanción.',
+        result: '94.59 % de placas leídas completas en 74 vehículos reales.',
+        flow: ['Cámara', 'Lee la placa', 'Sugiere sanción'],
+      },
+      en: {
+        title: 'Automatic plate reading',
+        problem: 'Vehicle access control is manual, slow and leaves no record.',
+        solution: 'A system that spots the vehicle on camera, reads its plate and suggests an explainable penalty based on speed and repeat offenses.',
+        part: 'I trained the models that read each plate character and designed the rules that suggest the penalty.',
+        result: '94.59% of plates read in full across 74 real vehicles.',
+        flow: ['Camera', 'Reads the plate', 'Suggests a penalty'],
+      },
+    },
+    team: 2,
+    pipeline: ['Cámara', 'YOLOv11', 'U-Net', 'CNN', 'Mamdani'],
     category: 'ai',
     featured: true,
     period: { es: 'May 2026 – Jun 2026', en: 'May 2026 – Jun 2026' },
     stack: ['Python', 'PyTorch', 'TensorFlow', 'YOLOv11', 'U-Net', 'CNN', 'OpenCV', 'FastAPI', 'React'],
-    links: { repo: 'https://github.com/JoelBonillaG/Plate_Detection_Segmentation_OCR', demo: null },
-    images: ['/projects/deteccion-vehicular/1.png', '/projects/deteccion-vehicular/2.png', '/projects/deteccion-vehicular/3.png', '/projects/deteccion-vehicular/4.png'],
+    links: { repo: 'https://github.com/JoelBonillaG/Plate_Detection_Segmentation_OCR', demo: null, paper: 'https://doi.org/10.63957/arksis.v1i2.0011' },
+    images: ['/projects/deteccion-vehicular/1.webp', '/projects/deteccion-vehicular/2.webp', '/projects/deteccion-vehicular/3.webp', '/projects/deteccion-vehicular/4.webp'],
     metrics: [
       { value: '94.59%', label: { es: 'lectura completa de placa', en: 'full-plate reading' } },
-      { value: '96.13%', label: { es: 'mAP50 de detección', en: 'detection mAP50' } },
+      { value: '96.13%', label: { es: 'mAP50 del detector (equipo)', en: 'detector mAP50 (team)' } },
       { value: '91.42%', label: { es: 'precisión por carácter', en: 'per-character accuracy' } },
       { value: '74', label: { es: 'vehículos reales evaluados', en: 'real vehicles tested' } },
     ],
@@ -60,12 +224,35 @@ export const projects = [
   },
   {
     id: 'riesgo-materno',
+    badge: 'review',
+    focus: 'data-ai',
+    order: 5,
+    card: {
+      es: {
+        title: 'Evaluación de riesgo materno',
+        problem: 'El personal de salud necesita clasificar el riesgo de un embarazo sin depender de una caja negra.',
+        solution: 'Un sistema que clasifica el riesgo en tres niveles a partir de seis signos vitales y explica cada resultado.',
+        part: 'Diseñé el motor que razona con las reglas clínicas y el algoritmo que aprende esas reglas a partir de datos reales.',
+        result: '159 reglas aprendidas de 8.640 posibles, validadas frente a RIPPER y PRISM.',
+        flow: ['Signos vitales', 'Reglas clínicas', 'Riesgo explicado'],
+      },
+      en: {
+        title: 'Maternal risk assessment',
+        problem: 'Health staff need to classify pregnancy risk without relying on a black box.',
+        solution: 'A system that classifies risk into three levels from six vital signs and explains every result.',
+        part: 'I designed the engine that reasons with clinical rules and the algorithm that learns those rules from real data.',
+        result: '159 rules learned out of 8,640 possible, validated against RIPPER and PRISM.',
+        flow: ['Vital signs', 'Clinical rules', 'Explained risk'],
+      },
+    },
+    team: 3,
+    pipeline: [{ es: 'Signos vitales', en: 'Vital signs' }, { es: 'Fuzzificación', en: 'Fuzzification' }, { es: 'Alg. genético', en: 'Genetic alg.' }, { es: 'Riesgo explicable', en: 'Explainable risk' }],
     category: 'ai',
     featured: true,
     period: { es: 'Abr 2026 – Jun 2026', en: 'Apr 2026 – Jun 2026' },
     stack: ['Python', 'FastAPI', 'React', 'TypeScript', 'Fuzzy Logic', 'Genetic Algorithms'],
-    links: { repo: 'https://github.com/JoelBonillaG/Fuzzy-Genetic-Maternal-Risk-Assessment', demo: 'https://med-maternal-risk.stratiumhub.com' },
-    images: ['/projects/riesgo-materno/2.png', '/projects/riesgo-materno/1.png', '/projects/riesgo-materno/3.png'],
+    links: { repo: 'https://github.com/JoelBonillaG/Fuzzy-Genetic-Maternal-Risk-Assessment', demo: null },
+    images: ['/projects/riesgo-materno/1.webp', '/projects/riesgo-materno/2.webp', '/projects/riesgo-materno/3.webp', '/projects/riesgo-materno/4.webp'],
     metrics: [
       { value: '159', label: { es: 'reglas aprendidas (de 8.640)', en: 'learned rules (of 8,640)' } },
       { value: '3', label: { es: 'niveles de riesgo', en: 'risk levels' } },
@@ -101,12 +288,32 @@ export const projects = [
   },
   {
     id: 'petsafe',
+    focus: 'fullstack',
+    order: 2,
+    card: {
+      es: {
+        title: 'PetSafe, gestión veterinaria',
+        problem: 'Una clínica veterinaria lleva citas, historiales y avisos a los dueños por canales separados y a mano.',
+        solution: 'Una plataforma web para el personal y una app móvil para los dueños: citas, cola de atención, historial clínico y avisos al instante.',
+        part: 'Desarrollé la app móvil de los dueños, las notificaciones en web y móvil, el código QR de cada mascota y la cola de atención.',
+        result: '9 flujos de la app probados de forma automática, de principio a fin.',
+        flow: ['El dueño pide cita', 'La clínica atiende', 'Aviso al instante'],
+      },
+      en: {
+        title: 'PetSafe, veterinary care',
+        problem: 'A vet clinic handles appointments, records and owner notices through separate, manual channels.',
+        solution: 'A web platform for staff and a mobile app for owners: appointments, care queue, medical history and instant notices.',
+        part: 'I built the owners’ mobile app, web and mobile notifications, each pet’s QR code and the care queue.',
+        result: '9 app flows tested automatically, end to end.',
+        flow: ['Owner books', 'Clinic attends', 'Instant notice'],
+      },
+    },
     category: 'fullstack',
     featured: true,
     period: { es: 'Mar 2026 – May 2026', en: 'Mar 2026 – May 2026' },
     stack: ['NestJS', 'Angular', 'Flutter', 'TypeScript', 'Dart', 'PostgreSQL', 'FCM', 'Docker', 'CI/CD'],
     links: { repo: 'https://github.com/JoelBonillaG/petsafe_movil_app', demo: 'https://pet-safe-six.vercel.app/login' },
-    images: ['/projects/petsafe/1.webp'],
+    images: ['/projects/petsafe/1.webp', '/projects/petsafe/2.webp', '/projects/petsafe/3.webp', '/projects/petsafe/4.webp', '/projects/petsafe/5.webp', '/projects/petsafe/6.webp'],
     metrics: [
       { value: '9', label: { es: 'flujos E2E automatizados (Maestro)', en: 'automated E2E flows (Maestro)' } },
     ],
@@ -139,12 +346,33 @@ export const projects = [
   },
   {
     id: 'hospital',
+    focus: 'backend',
+    order: 6,
+    card: {
+      es: {
+        title: 'Gestión hospitalaria',
+        problem: 'Un hospital con varios centros necesita gestionar pacientes y consultas sin que una falla detenga todo el sistema.',
+        solution: 'Una plataforma dividida en servicios independientes para autenticación, administración, consultas y reportes, detrás de una sola puerta de entrada.',
+        part: 'Construí desde cero el servicio de consultas médicas y el módulo de pacientes en la interfaz.',
+        result: '4 servicios independientes que se descubren y comunican entre sí.',
+        flow: ['Paciente', 'Consulta médica', 'Reporte'],
+      },
+      en: {
+        title: 'Hospital management',
+        problem: 'A multi-site hospital needs to manage patients and consultations without one failure stopping the whole system.',
+        solution: 'A platform split into independent services for auth, administration, consultations and reports, behind a single entry point.',
+        part: 'I built the medical consultations service from scratch and the patients module in the interface.',
+        result: '4 independent services that discover and talk to each other.',
+        flow: ['Patient', 'Consultation', 'Report'],
+      },
+    },
+    team: 4,
     category: 'backend',
     featured: true,
     period: { es: 'Sep 2025 – Oct 2025', en: 'Sep 2025 – Oct 2025' },
     stack: ['Spring Boot 3', 'Java 17', 'Spring Cloud', 'Eureka', 'API Gateway', 'OpenFeign', 'PostgreSQL', 'React', 'Docker'],
     links: { repo: 'https://github.com/JosueGarciaAbata/hospital-management-system', demo: null },
-    images: ['/projects/hospital/5.png', '/projects/hospital/1.png', '/projects/hospital/2.png', '/projects/hospital/3.png', '/projects/hospital/4.png'],
+    images: ['/projects/hospital/1.webp', '/projects/hospital/2.webp', '/projects/hospital/3.webp', '/projects/hospital/4.webp', '/projects/hospital/5.webp'],
     metrics: [
       { value: '4', label: { es: 'microservicios tras el gateway', en: 'microservices behind the gateway' } },
     ],
@@ -177,12 +405,33 @@ export const projects = [
   },
   {
     id: 'sistema-gasolina',
+    focus: 'backend',
+    order: 3,
+    card: {
+      es: {
+        title: 'Gestión distribuida de combustible',
+        problem: 'Una flota no sabe cuánto combustible consume cada viaje frente a lo que debería consumir.',
+        solution: 'Una plataforma que compara el consumo real de cada viaje con el que debería tener.',
+        part: 'Desarrollé de punta a punta la gestión de usuarios y la de rutas y viajes.',
+        result: 'La flota ve la eficiencia de cada viaje y detecta desvíos de consumo.',
+        flow: ['Viaje', 'Consumo real', 'Desvío detectado'],
+      },
+      en: {
+        title: 'Distributed fuel management',
+        problem: 'A fleet has no idea how much fuel each trip burns compared with what it should.',
+        solution: 'A platform that compares each trip’s real fuel use with the expected one.',
+        part: 'I built user management and route and trip management end to end.',
+        result: 'The fleet sees each trip’s efficiency and spots consumption deviations.',
+        flow: ['Trip', 'Real usage', 'Deviation found'],
+      },
+    },
+    team: 4,
     category: 'backend',
     featured: true,
     period: { es: 'Oct 2025 – Dic 2025', en: 'Oct 2025 – Dec 2025' },
     stack: ['NestJS', 'TypeScript', 'gRPC', 'Protobuf', 'PostgreSQL', 'Prisma', 'React', 'RabbitMQ', 'Docker'],
     links: { repo: 'https://github.com/DavidJosueP2/Distributed-Gasoline-System', demo: null },
-    images: ['/projects/sistema-gasolina/1.png', '/projects/sistema-gasolina/2.png', '/projects/sistema-gasolina/3.png', '/projects/sistema-gasolina/4.png'],
+    images: ['/projects/sistema-gasolina/1.webp', '/projects/sistema-gasolina/2.webp', '/projects/sistema-gasolina/3.webp', '/projects/sistema-gasolina/4.webp', '/projects/sistema-gasolina/5.webp'],
     metrics: [],
     content: {
       es: {
@@ -211,15 +460,16 @@ export const projects = [
   },
   {
     id: 'marketplace',
+    focus: 'fullstack',
+    team: 4,
     category: 'fullstack',
     featured: false,
     period: { es: 'Oct 2025 – Dic 2025', en: 'Oct 2025 – Dec 2025' },
     stack: ['Spring Boot', 'Java', 'React', 'TypeScript', 'PostgreSQL', 'Docker'],
-    links: { repo: 'https://github.com/DavidJosueP2/Marketplace_Link', demo: 'https://marketplace.stratiumhub.com' },
-    images: ['/projects/marketplace/4.png', '/projects/marketplace/1.png', '/projects/marketplace/2.png', '/projects/marketplace/3.png'],
+    links: { repo: 'https://github.com/DavidJosueP2/Marketplace_Link', demo: null },
+    images: ['/projects/marketplace/1.webp', '/projects/marketplace/2.webp', '/projects/marketplace/3.webp', '/projects/marketplace/4.webp'],
     metrics: [
-      { value: '90%', label: { es: 'cobertura de pruebas', en: 'test coverage' } },
-      { value: '85%', label: { es: 'respuesta más rápida', en: 'faster API response' } },
+      { value: '90%', label: { es: 'cobertura de pruebas (equipo)', en: 'test coverage (team)' } },
     ],
     content: {
       es: {
@@ -248,12 +498,33 @@ export const projects = [
   },
   {
     id: 'cliniccare',
+    focus: 'fullstack',
+    order: 7,
+    card: {
+      es: {
+        title: 'ClinicCare, citas médicas',
+        problem: 'Un consultorio agenda citas a mano y no controla quién accede a la información de los pacientes.',
+        solution: 'Una plataforma con agenda de citas, historiales y vistas distintas para administradores y médicos, con acceso seguro por rol.',
+        part: 'Desarrollé el inicio de sesión y la recuperación de contraseña de punta a punta, y la agenda de citas en la interfaz.',
+        result: 'Cada rol ve solo lo que le corresponde, y la agenda exporta sus reportes a PDF.',
+        flow: ['Inicio seguro', 'Agenda la cita', 'Reporte PDF'],
+      },
+      en: {
+        title: 'ClinicCare, medical appointments',
+        problem: 'A clinic books appointments by hand and has no control over who sees patient data.',
+        solution: 'A platform with an appointment calendar, records and separate views for admins and doctors, with role-based secure access.',
+        part: 'I built sign-in and password recovery end to end, and the appointment calendar in the interface.',
+        result: 'Each role sees only what it should, and the calendar exports its reports to PDF.',
+        flow: ['Secure sign-in', 'Book', 'PDF report'],
+      },
+    },
+    team: 4,
     category: 'fullstack',
     featured: true,
     period: { es: 'Sep 2025 – Oct 2025', en: 'Sep 2025 – Oct 2025' },
     stack: ['Spring Boot', 'Java 21', 'React', 'PostgreSQL', 'JWT', 'Spring Mail', 'Docker'],
     links: { repo: 'https://github.com/DRTX2/clinic', demo: null },
-    images: ['/projects/cliniccare/1.png', '/projects/cliniccare/2.png', '/projects/cliniccare/3.png', '/projects/cliniccare/4.png', '/projects/cliniccare/5.png'],
+    images: ['/projects/cliniccare/1.webp', '/projects/cliniccare/2.webp', '/projects/cliniccare/3.webp', '/projects/cliniccare/4.webp', '/projects/cliniccare/5.webp'],
     metrics: [],
     content: {
       es: {
@@ -282,12 +553,33 @@ export const projects = [
   },
   {
     id: 'iron-zone',
+    focus: 'backend',
+    order: 8,
+    card: {
+      es: {
+        title: 'Iron Zone, gestión de gimnasio',
+        problem: 'Un gimnasio maneja su web, membresías, clases y facturación con herramientas desconectadas.',
+        solution: 'Un solo sistema que reúne sitio web, tienda, membresías con cobro recurrente, clases y facturación electrónica.',
+        part: 'Desarrollé el módulo de guías de ejercicio, con contenido según el plan de cada socio, y preparé el entorno del proyecto para el equipo.',
+        result: '11 módulos a medida integrados en una sola plataforma.',
+        flow: ['Socio', 'Plan y guías', 'Factura'],
+      },
+      en: {
+        title: 'Iron Zone, gym management',
+        problem: 'A gym runs its website, memberships, classes and invoicing on disconnected tools.',
+        solution: 'One system that brings together website, store, recurring memberships, classes and e-invoicing.',
+        part: 'I built the exercise guides module, with content by each member’s plan, and set up the project environment for the team.',
+        result: '11 custom modules integrated into one platform.',
+        flow: ['Member', 'Plan & guides', 'Invoice'],
+      },
+    },
+    team: 7,
     category: 'backend',
     featured: false,
     period: { es: 'Abr 2026 – Jun 2026', en: 'Apr 2026 – Jun 2026' },
     stack: ['Odoo 18', 'Python', 'PostgreSQL', 'Docker', 'XML'],
-    links: { repo: 'https://github.com/JoelBonillaG/iron_zone_odoo_das', demo: 'https://iron-zone.stratiumhub.com' },
-    images: ['/projects/iron-zone/3.png', '/projects/iron-zone/1.png', '/projects/iron-zone/2.png', '/projects/iron-zone/4.png', '/projects/iron-zone/5.png'],
+    links: { repo: 'https://github.com/JoelBonillaG/iron_zone_odoo_das', demo: null },
+    images: ['/projects/iron-zone/1.webp', '/projects/iron-zone/2.webp', '/projects/iron-zone/3.webp', '/projects/iron-zone/4.webp'],
     metrics: [
       { value: '11', label: { es: 'módulos a medida sobre Odoo', en: 'custom Odoo modules' } },
     ],
@@ -318,6 +610,8 @@ export const projects = [
   },
   {
     id: 'microplus',
+    focus: 'mobile',
+    team: 1,
     category: 'mobile',
     featured: false,
     period: { es: '2025', en: '2025' },
@@ -352,6 +646,8 @@ export const projects = [
   },
   {
     id: 'simulador-ahorro',
+    focus: 'fullstack',
+    team: 4,
     category: 'fullstack',
     featured: false,
     period: { es: 'Abr 2025', en: 'Apr 2025' },
@@ -386,12 +682,14 @@ export const projects = [
   },
   {
     id: 'mantenimiento-equipos',
+    focus: 'fullstack',
+    team: 3,
     category: 'fullstack',
     featured: false,
     period: { es: 'Dic 2024 – Ene 2025', en: 'Dec 2024 – Jan 2025' },
     stack: ['Laravel', 'PHP', 'React', 'PostgreSQL', 'JWT'],
     links: { repo: 'https://github.com/JosueGarciaAbata/agiles-proyecto', demo: null },
-    images: ['/projects/mantenimiento-equipos/1.png'],
+    images: ['/projects/mantenimiento-equipos/1.webp'],
     metrics: [],
     content: {
       es: {
@@ -420,11 +718,12 @@ export const projects = [
   },
   {
     id: 'data-warehouse-hefesto',
+    focus: 'data-ai',
     category: 'data',
     featured: false,
     period: { es: '2025', en: '2025' },
     stack: ['SQL Server', 'SSIS', 'SSAS', 'MDX', 'Excel'],
-    links: { repo: 'https://github.com/JoelBonillaG/Proyecto_Hefesto', demo: null },
+    links: { repo: null, demo: null },
     images: [],
     metrics: [],
     content: {
@@ -454,12 +753,15 @@ export const projects = [
   },
   {
     id: 'unity-game',
+    focus: 'fullstack',
+    hidden: true,
+    team: 3,
     category: 'other',
     featured: false,
     period: { es: 'Jun 2025 – Jul 2025', en: 'Jun 2025 – Jul 2025' },
     stack: ['Unity', 'C#', 'Zenject', 'SQLite', 'Clean Architecture'],
     links: { repo: 'https://github.com/DRTX2/PatternsProject', demo: null },
-    images: ['/projects/unity-game/1.jpeg'],
+    images: ['/projects/unity-game/1.webp'],
     metrics: [],
     content: {
       es: {
@@ -488,12 +790,15 @@ export const projects = [
   },
   {
     id: 'pagina-votaciones',
+    focus: 'fullstack',
+    hidden: true,
+    team: 5,
     category: 'other',
     featured: false,
     period: { es: 'Oct 2024', en: 'Oct 2024' },
     stack: ['Laravel', 'PHP', 'Blade', 'Tailwind CSS', 'MySQL'],
     links: { repo: 'https://github.com/JoelBonillaG/Pagina_Votaciones_UTA', demo: null },
-    images: ['/projects/pagina-votaciones/1.jpeg'],
+    images: ['/projects/pagina-votaciones/1.webp'],
     metrics: [],
     content: {
       es: {
@@ -522,12 +827,15 @@ export const projects = [
   },
   {
     id: 'creative-portfolio',
+    focus: 'fullstack',
+    hidden: true,
+    team: 4,
     category: 'other',
     featured: false,
     period: { es: 'Mar 2024 – Abr 2024', en: 'Mar 2024 – Apr 2024' },
     stack: ['PHP', 'MySQL', 'HTML', 'CSS', 'JavaScript'],
     links: { repo: 'https://github.com/JosueGarciaAbata/proyecto-mds', demo: null },
-    images: ['/projects/creative-portfolio/1.jpeg'],
+    images: ['/projects/creative-portfolio/1.webp'],
     metrics: [],
     content: {
       es: {
@@ -561,7 +869,6 @@ export const projectCategories = [
   'all',
   'fullstack',
   'backend',
-  'ai',
   'mobile',
   'data',
   'other',

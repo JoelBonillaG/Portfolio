@@ -1,7 +1,9 @@
-/** Navigation items: section id + i18n key. Shared by navbar and footer. */
+/** Home sections in page order: id + i18n key. Used by header, rail and footer. */
 export const NAV_ITEMS = [
-  { id: 'home', key: 'nav.home' },
-  { id: 'projects', key: 'nav.projects' },
-  { id: 'skills', key: 'nav.skills' },
-  { id: 'contact', key: 'nav.contact' },
+  { id: 'experiencia', key: 'nav.experience' },
+  { id: 'proyectos', key: 'nav.projects' },
+  { id: 'habilidades', key: 'nav.skills' },
+  { id: 'formacion', key: 'nav.education' },
+  { id: 'sobre-mi', key: 'nav.about' },
+  { id: 'contacto', key: 'nav.contact' },
 ]
