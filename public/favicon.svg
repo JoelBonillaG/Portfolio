@@ -1,7 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <rect width="64" height="64" rx="14" fill="#BA7517" />
-  <text x="50%" y="52%"
-        font-family="'Space Grotesk', system-ui, sans-serif"
-        font-size="30" font-weight="700"
-        fill="#FAEEDA" text-anchor="middle" dominant-baseline="central">JB</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#0F1A2A"/>
+  <rect x="1.5" y="1.5" width="61" height="61" rx="12.5" fill="none" stroke="#C9A45C" stroke-opacity=".45" stroke-width="1.5"/>
+  <text x="32" y="43" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700" fill="#ECE6DA" letter-spacing="-1">J<tspan fill="#C9A45C" font-style="italic">B</tspan></text>
 </svg>
