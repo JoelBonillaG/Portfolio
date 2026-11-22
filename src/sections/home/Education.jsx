@@ -1,19 +1,16 @@
-import { ExternalLink } from 'lucide-react'
-import {
-  certifications,
-  education,
-  languages,
-  paperUnderReview,
-  publication,
-} from '@/data/certifications.js'
+import { useState } from 'react'
+import { ArrowUpRight } from 'lucide-react'
+import { certifications, education, languages, paperUnderReview, publication } from '@/data/certifications.js'
 import { events } from '@/data/events.js'
 import { useTranslation } from '@/i18n/useTranslation.js'
 import { TextLink } from '@/components/ui'
+import { cn } from '@/lib/utils.js'
 import { SectionHeader } from './SectionHeader.jsx'
 
-/** Degree with the university seal, the paper, and certificates as brand-tinted cards. */
+/** Degree, the paper and languages on the left; certificates and events as compact lists behind tabs. */
 export function Education() {
   const { t, lang } = useTranslation()
+  const [tab, setTab] = useState('certs')
 
   return (
     <section id="formacion" className="border-t border-line py-16">
@@ -42,7 +39,13 @@ export function Education() {
             style={{ '--d': '120ms' }}
             className="sweep flex items-start gap-5 overflow-hidden rounded-[20px] border border-line bg-surface p-5"
           >
-            <a href={publication.url} target="_blank" rel="noreferrer" className="shrink-0" aria-label={publication.title}>
+            <a
+              href={publication.url}
+              target="_blank"
+              rel="noreferrer"
+              className="shrink-0"
+              aria-label={publication.title}
+            >
               <img
                 src={publication.cover}
                 alt=""
@@ -71,95 +74,101 @@ export function Education() {
         </div>
 
         <div>
-          <h3 className="m-0 mb-3 text-[22px] font-bold">{t('education.certifications')}</h3>
-          <ul className="m-0 grid list-none gap-4 p-0 sm:grid-cols-2">
-            {certifications.map((c, i) => {
-              const body = (
-                <>
-                  <span
-                    className="grid h-24 place-items-center"
-                    style={{ background: 'color-mix(in oklab, var(--yellow) 9%, var(--surface))' }}
-                  >
-                    <img src={c.logo} alt="" className="logo-tone h-16 max-w-[70%] object-contain" />
-                  </span>
-                  <span className="flex flex-1 flex-col gap-1 p-4">
-                    <span className="font-bold leading-snug">{c.name[lang]}</span>
-                    <span className="text-sm text-muted">
-                      {c.issuer}, {c.year}
-                    </span>
-                    {c.links && (
-                      <span className="mt-auto flex flex-wrap gap-x-3 gap-y-1 pt-2 text-sm">
-                        {c.links.map((l) => (
-                          <a
-                            key={l.url}
-                            href={l.url}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="inline-flex items-center gap-1 font-bold text-blue underline-offset-[3px] hover:underline"
-                          >
-                            {l.label[lang]}
-                            <ExternalLink size={12} aria-hidden="true" />
-                          </a>
-                        ))}
-                      </span>
-                    )}
+          <div
+            role="tablist"
+            aria-label={t('education.display')}
+            className="flex w-fit gap-1 rounded-full border border-line p-1"
+          >
+            {['certs', 'events'].map((key) => (
+              <button
+                key={key}
+                type="button"
+                role="tab"
+                aria-selected={tab === key}
+                onClick={() => setTab(key)}
+                className={cn(
+                  'min-h-10 cursor-pointer rounded-full px-4 text-[15px] font-bold transition-colors duration-300',
+                  tab === key ? 'bg-blue text-on-blue' : 'text-muted hover:text-ink',
+                )}
+              >
+                {key === 'certs' ? t('education.certifications') : t('education.events')}
+              </button>
+            ))}
+          </div>
+
+          <ul key={tab} role="tabpanel" className="page-in m-0 mt-5 flex list-none flex-col p-0">
+            {tab === 'certs'
+              ? certifications.map((c) => (
+                  <li key={c.id} className="flex items-center gap-4 border-b border-line py-4 last:border-b-0">
+                    <img
+                      src={c.logo}
+                      alt=""
+                      width={44}
+                      height={44}
+                      loading="lazy"
+                      className="size-11 shrink-0 rounded-xl border border-line bg-white object-contain p-1"
+                    />
+                    <div className="min-w-0 flex-1">
+                      <p className="m-0 font-bold leading-snug">{c.name[lang]}</p>
+                      <p className="m-0 text-sm text-muted">
+                        {c.issuer} · {c.year}
+                      </p>
+                      {c.links && (
+                        <p className="m-0 mt-1 flex flex-wrap gap-x-3 gap-y-0.5 text-sm">
+                          {c.links.map((l) => (
+                            <a
+                              key={l.url}
+                              href={l.url}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="font-bold text-blue hover:underline"
+                            >
+                              {l.label[lang]}
+                            </a>
+                          ))}
+                        </p>
+                      )}
+                    </div>
                     {c.url && (
-                      <span className="mt-auto inline-flex items-center gap-1 pt-2 text-sm font-bold text-blue">
-                        {t('education.view')}
-                        <ExternalLink size={14} aria-hidden="true" />
-                      </span>
+                      <a
+                        href={c.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`${t('education.view')}: ${c.name[lang]}`}
+                        className="grid size-9 shrink-0 place-items-center rounded-full border border-line text-muted transition-colors hover:border-yellow hover:text-yellow"
+                      >
+                        <ArrowUpRight size={16} aria-hidden="true" />
+                      </a>
                     )}
-                  </span>
-                </>
-              )
-              const cls =
-                'sweep hobby flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-surface transition-[transform,border-color] duration-300 hover:-translate-y-1 hover:border-blue'
-              return (
-                <li key={c.id} data-reveal style={{ '--d': `${i * 110}ms` }} className="h-full">
-                  {c.url ? (
-                    <a href={c.url} target="_blank" rel="noreferrer" className={cls}>
-                      {body}
-                    </a>
-                  ) : (
-                    <div className={cls}>{body}</div>
-                  )}
-                </li>
-              )
-            })}
+                  </li>
+                ))
+              : events.flatMap((g) =>
+                  g.items.map((e) => (
+                    <li key={e.id} className="flex gap-4 border-b border-line py-4 last:border-b-0">
+                      <img
+                        src={e.logo}
+                        alt=""
+                        width={44}
+                        height={44}
+                        loading="lazy"
+                        className="size-11 shrink-0 rounded-xl border border-line bg-white object-contain p-1"
+                      />
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-baseline justify-between gap-x-4">
+                          <p className="m-0 min-w-0 font-bold leading-snug">{e.title[lang]}</p>
+                          <span className="shrink-0 text-sm whitespace-nowrap text-muted">
+                            {e.type[lang]} · {g.year}
+                          </span>
+                        </div>
+                        <p className="m-0 text-sm text-muted">{e.org}</p>
+                        <p className="m-0 mt-1 text-[15px]">{e.detail[lang]}</p>
+                      </div>
+                    </li>
+                  )),
+                )}
           </ul>
         </div>
       </div>
-
-      <h3 className="m-0 mt-14 text-[22px] font-bold">{t('education.events')}</h3>
-      <ol className="m-0 mt-4 list-none p-0">
-        {events.map((group) => (
-          <li key={group.year} className="grid gap-x-8 border-t border-line py-6 sm:grid-cols-[80px_1fr]">
-            <p className="m-0 mb-3 font-display text-xl font-semibold text-yellow sm:mb-0">{group.year}</p>
-            <ul className="m-0 flex list-none flex-col gap-6 p-0">
-              {group.items.map((e, i) => (
-                <li key={e.id} data-reveal style={{ '--d': `${i * 90}ms` }} className="reveal-row flex gap-4">
-                  <img
-                    src={e.logo}
-                    alt=""
-                    width={48}
-                    height={48}
-                    loading="lazy"
-                    className="size-12 shrink-0 rounded-xl border border-line bg-white object-contain p-1"
-                  />
-                  <div className="min-w-0 flex-1">
-                    <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                      <p className="m-0 font-bold leading-snug">{e.title[lang]}</p>
-                      <span className="text-sm text-muted">{e.type[lang]}</span>
-                    </div>
-                    <p className="m-0 text-sm text-muted">{e.org}</p>
-                    <p className="m-0 mt-1 text-[15px]">{e.detail[lang]}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </li>
-        ))}
-      </ol>
     </section>
   )
 }
