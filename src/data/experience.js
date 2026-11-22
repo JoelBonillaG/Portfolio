@@ -8,7 +8,7 @@ export const experience = [
     company: 'Kronhos',
     logo: '/experience/kronhos.webp',
     period: { es: 'Ene 2026 – Jun 2026', en: 'Jan 2026 – Jun 2026' },
-    stack: ['SQL Server', 'T-SQL', 'Power BI', 'Power Query', 'DAX'],
+    stack: ['SQL Server', 'T-SQL', 'Python', 'Power BI', 'Power Query', 'DAX'],
     content: {
       es: {
         role: 'Analista de Datos y BI',
