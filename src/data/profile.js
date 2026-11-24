@@ -12,7 +12,7 @@ export const profile = {
   socials: {
     github: 'https://github.com/JoelBonillaG',
     linkedin:
-      'https://www.linkedin.com/in/fernando-joel-bonilla-guerrero-639ab6368/',
+      'https://www.linkedin.com/in/joel-bonilla-dev/',
   },
   /** Optional: path to a downloadable CV (PDF). null hides the button. */
   resumeUrl: { es: '/cv/Joel-Bonilla-CV.pdf', en: '/cv/Joel-Bonilla-CV-EN.pdf' },
