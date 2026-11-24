@@ -55,7 +55,7 @@ export const projects = [
     },
     content: {
       es: {
-        title: 'Brunexa, banca en línea',
+        title: 'Brunexa: banca en línea',
         tagline: 'Banca en línea con simuladores de crédito e inversión y registro con verificación de identidad. Mi parte: el módulo de inversiones.',
         overview:
           'Brunexa es una banca en línea desarrollada en equipo. El módulo de inversiones permite a un cliente simular cuánto ganaría con un producto a plazo: la tasa depende del monto y del plazo, se descuentan la retención del impuesto a la renta y los costos adicionales, y el resultado se entrega como una tabla de pagos y un reporte en PDF. El banco configura sus productos, rangos de tasas y retenciones desde un panel de administración, sin tocar código.',
@@ -69,7 +69,7 @@ export const projects = [
         ],
       },
       en: {
-        title: 'Brunexa, online bank',
+        title: 'Brunexa: online banking',
         tagline: 'An online bank with credit and investment simulators and sign-up with identity verification. My part: the investment module.',
         overview:
           'Brunexa is an online bank built as a team. Its investment module lets a customer simulate how much a term product would earn: the rate depends on amount and term, income-tax withholding and extra fees are deducted, and the result comes as a payment schedule and a PDF report. The bank configures its products, rate ranges and withholdings from an admin panel, without touching code.',
@@ -229,7 +229,7 @@ export const projects = [
     order: 5,
     card: {
       es: {
-        title: 'Evaluación de riesgo materno',
+        title: 'Riesgo materno: IA explicable para el embarazo',
         problem: 'El personal de salud necesita clasificar el riesgo de un embarazo sin depender de una caja negra.',
         solution: 'Un sistema que clasifica el riesgo en tres niveles a partir de seis signos vitales y explica cada resultado.',
         part: 'Diseñé el motor que razona con las reglas clínicas y el algoritmo que aprende esas reglas a partir de datos reales.',
@@ -237,7 +237,7 @@ export const projects = [
         flow: ['Signos vitales', 'Reglas clínicas', 'Riesgo explicado'],
       },
       en: {
-        title: 'Maternal risk assessment',
+        title: 'Maternal risk: explainable AI for pregnancy',
         problem: 'Health staff need to classify pregnancy risk without relying on a black box.',
         solution: 'A system that classifies risk into three levels from six vital signs and explains every result.',
         part: 'I designed the engine that reasons with clinical rules and the algorithm that learns those rules from real data.',
@@ -292,7 +292,7 @@ export const projects = [
     order: 2,
     card: {
       es: {
-        title: 'PetSafe, gestión veterinaria',
+        title: 'PetSafe: clínica veterinaria web y móvil',
         problem: 'Una clínica veterinaria lleva citas, historiales y avisos a los dueños por canales separados y a mano.',
         solution: 'Una plataforma web para el personal y una app móvil para los dueños: citas, cola de atención, historial clínico y avisos al instante.',
         part: 'Desarrollé la app móvil de los dueños, las notificaciones en web y móvil, el código QR de cada mascota y la cola de atención.',
@@ -300,7 +300,7 @@ export const projects = [
         flow: ['El dueño pide cita', 'La clínica atiende', 'Aviso al instante'],
       },
       en: {
-        title: 'PetSafe, veterinary care',
+        title: 'PetSafe: web and mobile vet clinic',
         problem: 'A vet clinic handles appointments, records and owner notices through separate, manual channels.',
         solution: 'A web platform for staff and a mobile app for owners: appointments, care queue, medical history and instant notices.',
         part: 'I built the owners’ mobile app, web and mobile notifications, each pet’s QR code and the care queue.',
@@ -350,7 +350,7 @@ export const projects = [
     order: 6,
     card: {
       es: {
-        title: 'Gestión hospitalaria',
+        title: 'H&Q Hospital: gestión hospitalaria',
         problem: 'Un hospital con varios centros necesita gestionar pacientes y consultas sin que una falla detenga todo el sistema.',
         solution: 'Una plataforma dividida en servicios independientes para autenticación, administración, consultas y reportes, detrás de una sola puerta de entrada.',
         part: 'Construí desde cero el servicio de consultas médicas y el módulo de pacientes en la interfaz.',
@@ -358,7 +358,7 @@ export const projects = [
         flow: ['Paciente', 'Consulta médica', 'Reporte'],
       },
       en: {
-        title: 'Hospital management',
+        title: 'H&Q Hospital: hospital management',
         problem: 'A multi-site hospital needs to manage patients and consultations without one failure stopping the whole system.',
         solution: 'A platform split into independent services for auth, administration, consultations and reports, behind a single entry point.',
         part: 'I built the medical consultations service from scratch and the patients module in the interface.',
@@ -409,7 +409,7 @@ export const projects = [
     order: 3,
     card: {
       es: {
-        title: 'Gestión distribuida de combustible',
+        title: 'FuelQ: control inteligente de combustible',
         problem: 'Una flota no sabe cuánto combustible consume cada viaje frente a lo que debería consumir.',
         solution: 'Una plataforma que compara el consumo real de cada viaje con el que debería tener.',
         part: 'Desarrollé de punta a punta la gestión de usuarios y la de rutas y viajes.',
@@ -417,7 +417,7 @@ export const projects = [
         flow: ['Viaje', 'Consumo real', 'Desvío detectado'],
       },
       en: {
-        title: 'Distributed fuel management',
+        title: 'FuelQ: smart fuel control',
         problem: 'A fleet has no idea how much fuel each trip burns compared with what it should.',
         solution: 'A platform that compares each trip’s real fuel use with the expected one.',
         part: 'I built user management and route and trip management end to end.',
@@ -473,7 +473,7 @@ export const projects = [
     ],
     content: {
       es: {
-        title: 'Gestión y Moderación de Publicaciones (Marketplace Link)',
+        title: 'Marketplace Link: compra y venta cerca de ti',
         tagline: 'Marketplace con publicaciones geolocalizadas y moderación automática de contenido.',
         overview:
           'Marketplace full-stack donde los usuarios publican productos, descubren lo que se vende cerca mediante consultas geoespaciales y un equipo de moderación mantiene el catálogo confiable. El backend en Spring Boot expone una API REST documentada con OpenAPI, con seguridad JWT y control de acceso por rol, paginación y moderación de contenido; el frontend está en React con TypeScript. La calidad está integrada en el pipeline —cobertura de pruebas, E2E y análisis estático— y la plataforma se despliega en la nube con almacenamiento de imágenes gestionado.',
@@ -484,7 +484,7 @@ export const projects = [
         ],
       },
       en: {
-        title: 'Publication Management & Moderation (Marketplace Link)',
+        title: 'Marketplace Link: buy and sell nearby',
         tagline: 'A marketplace with geolocated listings and automatic content moderation.',
         overview:
           'A full-stack marketplace where users publish products, discover what is for sale nearby via geospatial queries and a moderation team keeps the catalog trustworthy. The Spring Boot backend exposes a REST API documented with OpenAPI, with JWT security and role-based access control, pagination and content moderation; the frontend is React with TypeScript. Quality is built into the pipeline — test coverage, E2E and static analysis — and the platform is deployed to the cloud with managed image storage.',
@@ -502,7 +502,7 @@ export const projects = [
     order: 7,
     card: {
       es: {
-        title: 'ClinicCare, citas médicas',
+        title: 'ClinicCare: agenda médica en línea',
         problem: 'Un consultorio agenda citas a mano y no controla quién accede a la información de los pacientes.',
         solution: 'Una plataforma con agenda de citas, historiales y vistas distintas para administradores y médicos, con acceso seguro por rol.',
         part: 'Desarrollé el inicio de sesión y la recuperación de contraseña de punta a punta, y la agenda de citas en la interfaz.',
@@ -510,7 +510,7 @@ export const projects = [
         flow: ['Inicio seguro', 'Agenda la cita', 'Reporte PDF'],
       },
       en: {
-        title: 'ClinicCare, medical appointments',
+        title: 'ClinicCare: online medical scheduling',
         problem: 'A clinic books appointments by hand and has no control over who sees patient data.',
         solution: 'A platform with an appointment calendar, records and separate views for admins and doctors, with role-based secure access.',
         part: 'I built sign-in and password recovery end to end, and the appointment calendar in the interface.',
@@ -557,7 +557,7 @@ export const projects = [
     order: 8,
     card: {
       es: {
-        title: 'Iron Zone, gestión de gimnasio',
+        title: 'Iron Zone: gestión de gimnasio',
         problem: 'Un gimnasio maneja su web, membresías, clases y facturación con herramientas desconectadas.',
         solution: 'Un solo sistema que reúne sitio web, tienda, membresías con cobro recurrente, clases y facturación electrónica.',
         part: 'Desarrollé el módulo de guías de ejercicio, con contenido según el plan de cada socio, y preparé el entorno del proyecto para el equipo.',
@@ -565,7 +565,7 @@ export const projects = [
         flow: ['Socio', 'Plan y guías', 'Factura'],
       },
       en: {
-        title: 'Iron Zone, gym management',
+        title: 'Iron Zone: gym management',
         problem: 'A gym runs its website, memberships, classes and invoicing on disconnected tools.',
         solution: 'One system that brings together website, store, recurring memberships, classes and e-invoicing.',
         part: 'I built the exercise guides module, with content by each member’s plan, and set up the project environment for the team.',

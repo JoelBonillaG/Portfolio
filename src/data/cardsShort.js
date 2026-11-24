@@ -21,19 +21,19 @@ export const cardsShort = {
     en: { text: 'A platform that compares each trip’s real fuel use with the expected one.' },
   },
   petsafe: {
-    es: { title: 'PetSafe, gestión veterinaria', text: 'Plataforma web y móvil para una clínica veterinaria, con citas, cola de atención y notificaciones.' },
-    en: { title: 'PetSafe, veterinary care', text: 'A web and mobile platform for a veterinary clinic, with appointments, a care queue and notifications.' },
+    es: { title: 'PetSafe: clínica veterinaria web y móvil', text: 'Plataforma web y móvil para una clínica veterinaria, con citas, cola de atención y notificaciones.' },
+    en: { title: 'PetSafe: web and mobile vet clinic', text: 'A web and mobile platform for a veterinary clinic, with appointments, a care queue and notifications.' },
   },
   hospital: {
-    es: { title: 'Gestión hospitalaria', text: 'Plataforma de microservicios para gestionar pacientes y consultas médicas.' },
-    en: { title: 'Hospital management', text: 'A microservices platform to manage patients and medical consultations.' },
+    es: { title: 'H&Q Hospital: gestión hospitalaria', text: 'Plataforma de microservicios para gestionar pacientes y consultas médicas.' },
+    en: { title: 'H&Q Hospital: hospital management', text: 'A microservices platform to manage patients and medical consultations.' },
   },
   cliniccare: {
-    es: { title: 'ClinicCare, citas médicas', text: 'Plataforma clínica para agendar citas y gestionar usuarios con acceso seguro.' },
-    en: { title: 'ClinicCare, medical appointments', text: 'A clinic platform to book appointments and manage users with secure access.' },
+    es: { title: 'ClinicCare: agenda médica en línea', text: 'Plataforma clínica para agendar citas y gestionar usuarios con acceso seguro.' },
+    en: { title: 'ClinicCare: online medical scheduling', text: 'A clinic platform to book appointments and manage users with secure access.' },
   },
   'iron-zone': {
-    es: { title: 'Iron Zone, gestión de gimnasio', text: 'Plataforma de gimnasio que reúne sitio web, membresías y facturación en un solo sistema.' },
-    en: { title: 'Iron Zone, gym management', text: 'A gym platform that brings the website, memberships and billing into one system.' },
+    es: { title: 'Iron Zone: gestión de gimnasio', text: 'Plataforma de gimnasio que reúne sitio web, membresías y facturación en un solo sistema.' },
+    en: { title: 'Iron Zone: gym management', text: 'A gym platform that brings the website, memberships and billing into one system.' },
   },
 }
