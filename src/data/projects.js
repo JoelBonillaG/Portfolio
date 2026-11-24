@@ -439,7 +439,14 @@ export const projects = [
     featured: true,
     period: { es: 'Oct 2025 – Dic 2025', en: 'Oct 2025 – Dec 2025' },
     stack: ['NestJS', 'TypeScript', 'gRPC', 'Protobuf', 'PostgreSQL', 'Prisma', 'React', 'RabbitMQ', 'Docker'],
-    links: { repo: 'https://github.com/DavidJosueP2/Distributed-Gasoline-System', demo: null },
+    links: {
+      repo: 'https://github.com/DavidJosueP2/Distributed-Gasoline-System',
+      repos: [
+        { label: { es: 'Backend', en: 'Backend' }, url: 'https://github.com/DavidJosueP2/Distributed-Gasoline-System' },
+        { label: { es: 'Web', en: 'Web' }, url: 'https://github.com/JoelBonillaG/Distributed-Gasoline-System-Frontend' },
+      ],
+      demo: null,
+    },
     images: ['/projects/sistema-gasolina/1.webp', '/projects/sistema-gasolina/2.webp', '/projects/sistema-gasolina/3.webp', '/projects/sistema-gasolina/4.webp', '/projects/sistema-gasolina/5.webp'],
     metrics: [],
     content: {
