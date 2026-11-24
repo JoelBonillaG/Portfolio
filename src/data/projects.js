@@ -165,7 +165,7 @@ export const projects = [
     order: 4,
     card: {
       es: {
-        title: 'Lectura automática de placas',
+        title: 'Monitoreo UTA: lectura de placas con IA',
         problem: 'El control vehicular en accesos es manual, lento y no deja registro.',
         solution: 'Un sistema que reconoce el vehículo con una cámara, lee su placa y propone una sanción explicable según velocidad y reincidencia.',
         part: 'Entrené los modelos que leen cada carácter de la placa y diseñé las reglas que proponen la sanción.',
@@ -173,7 +173,7 @@ export const projects = [
         flow: ['Cámara', 'Lee la placa', 'Sugiere sanción'],
       },
       en: {
-        title: 'Automatic plate reading',
+        title: 'Monitoreo UTA: AI license plate reading',
         problem: 'Vehicle access control is manual, slow and leaves no record.',
         solution: 'A system that spots the vehicle on camera, reads its plate and suggests an explainable penalty based on speed and repeat offenses.',
         part: 'I trained the models that read each plate character and designed the rules that suggest the penalty.',
