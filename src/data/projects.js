@@ -10,7 +10,8 @@
  *  - featured  highlight + sort to the front.
  *  - period    bilingual date range string.
  *  - stack     technology tags (language-independent).
- *  - links     { repo, demo, paper? } — null/absent hides the button.
+ *  - links     { repo, repos?, demo, paper? } — null/absent hides the button.
+ *              repos: [{ label: { es, en }, url }] when the code lives in several repositories.
  *  - images    gallery; public paths. images[0] is the card cover.
  *  - metrics   [{ value, label: { es, en } }] — headline numbers. [] if none.
  *  - team      team size (1 = solo, 0 = team of unknown size). Credit line.
@@ -312,7 +313,15 @@ export const projects = [
     featured: true,
     period: { es: 'Mar 2026 – May 2026', en: 'Mar 2026 – May 2026' },
     stack: ['NestJS', 'Angular', 'Flutter', 'TypeScript', 'Dart', 'PostgreSQL', 'FCM', 'Docker', 'CI/CD'],
-    links: { repo: 'https://github.com/JoelBonillaG/petsafe_movil_app', demo: 'https://pet-safe-six.vercel.app/login' },
+    links: {
+      repo: 'https://github.com/JoelBonillaG/petsafe_movil_app',
+      repos: [
+        { label: { es: 'App móvil', en: 'Mobile app' }, url: 'https://github.com/JoelBonillaG/petsafe_movil_app' },
+        { label: { es: 'Backend', en: 'Backend' }, url: 'https://github.com/STRATIUM-UTA/PetSafe-Back' },
+        { label: { es: 'Web', en: 'Web' }, url: 'https://github.com/STRATIUM-UTA/PetSafe-Front' },
+      ],
+      demo: 'https://pet-safe-six.vercel.app/login',
+    },
     images: ['/projects/petsafe/1.webp', '/projects/petsafe/2.webp', '/projects/petsafe/3.webp', '/projects/petsafe/4.webp', '/projects/petsafe/5.webp', '/projects/petsafe/6.webp'],
     metrics: [
       { value: '9', label: { es: 'flujos E2E automatizados (Maestro)', en: 'automated E2E flows (Maestro)' } },

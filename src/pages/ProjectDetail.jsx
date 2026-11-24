@@ -53,11 +53,17 @@ export function ProjectDetail() {
         </div>
         <div className="mt-6 flex flex-wrap gap-3">
           {project.links.paper && <Button href={project.links.paper}>{t('projects.paper')}</Button>}
-          {project.links.repo && (
-            <Button href={project.links.repo} variant={project.links.paper ? 'ghost' : 'primary'}>
-              {t('projects.code')}
-            </Button>
-          )}
+          {project.links.repos
+            ? project.links.repos.map((r, i) => (
+                <Button key={r.url} href={r.url} variant={i === 0 && !project.links.paper ? 'primary' : 'ghost'}>
+                  {t('projects.code')} · {r.label[lang]}
+                </Button>
+              ))
+            : project.links.repo && (
+                <Button href={project.links.repo} variant={project.links.paper ? 'ghost' : 'primary'}>
+                  {t('projects.code')}
+                </Button>
+              )}
           {project.links.demo && (
             <Button href={project.links.demo} variant="ghost">
               {t('projects.demo')}
