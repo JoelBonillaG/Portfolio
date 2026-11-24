@@ -253,7 +253,7 @@ export const projects = [
     period: { es: 'Abr 2026 – Jun 2026', en: 'Apr 2026 – Jun 2026' },
     stack: ['Python', 'FastAPI', 'React', 'TypeScript', 'Fuzzy Logic', 'Genetic Algorithms'],
     links: { repo: 'https://github.com/JoelBonillaG/Fuzzy-Genetic-Maternal-Risk-Assessment', demo: null },
-    images: ['/projects/riesgo-materno/1.webp', '/projects/riesgo-materno/2.webp', '/projects/riesgo-materno/3.webp', '/projects/riesgo-materno/4.webp'],
+    images: ['/projects/riesgo-materno/1.webp', '/projects/riesgo-materno/2.webp', '/projects/riesgo-materno/3.webp', '/projects/riesgo-materno/4.webp', '/projects/riesgo-materno/5.webp'],
     metrics: [
       { value: '159', label: { es: 'reglas aprendidas (de 8.640)', en: 'learned rules (of 8,640)' } },
       { value: '3', label: { es: 'niveles de riesgo', en: 'risk levels' } },
